@@ -1,0 +1,458 @@
+/* TIPOGRAFÍA */
+body {
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    background-color: #FFFAF4;
+}
+
+/*MENU/*
+
+/* Estilos del header */
+header {
+    background-color: #2A5FB1; /* Fondo azul */
+    padding: 20px 40px; /* Espacio alrededor del contenido */
+    position: fixed; /* Hace que el menú quede fijo */
+    top: 0; /* Fija el menú en la parte superior */
+    left: 0;
+    width: 100%; /* El menú ocupa todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos entre el lado izquierdo y derecho */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+/* Para evitar que el contenido quede oculto debajo del header */
+body {
+    padding-top: 80px; /* Ajusta este valor al alto del header */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo-img {
+    height: 60px; /* Ajusta el tamaño del logo según lo necesites */
+}
+
+/* Contenedor del menú */
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Permite que el menú ocupe el espacio disponible a la izquierda */
+    justify-content: center;
+}
+
+/* Estilos del menú */
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces del menú */
+.menu li a {
+    text-decoration: none;
+    color: #FFFAF4; /* Texto en color claro */
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto de subrayado en hover */
+.menu li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFAF4; /* Subrayado en color claro */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.menu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.menu li a:hover {
+    color: #FFFAF4; /* Mantén el color claro en hover */
+}
+
+/* Estilo responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* Contenedor de los íconos (carrito y perfil) */
+.icon-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end; /* Alinea los íconos a la derecha */
+    position: absolute; /* Fija los íconos en una posición */
+    right: 110px; /* Ajusta este valor para mover los íconos más a la izquierda */
+}
+
+/* Estilos para los íconos en el menú */
+.icon-container a img.icon {
+    width: 24px;  /* Tamaño del ícono, puedes ajustarlo según sea necesario */
+    height: auto; /* Mantener la proporción de la imagen */
+    transition: transform 0.3s ease; /* Animación suave para el hover */
+}
+
+/* Efecto al pasar el mouse (hover) sobre los íconos */
+.icon-container a:hover img.icon {
+    transform: scale(2.); /* Aumenta el tamaño del ícono ligeramente */
+}
+
+
+
+                  /* VIDEO Y BOTÓN COMPRAR */
+
+/* Estilos generales para la sección hero */
+#menu {
+    position: relative;
+    width: 100%;
+    height: 815px; /* O ajusta según el tamaño de tu video */
+    overflow: hidden;
+}
+
+/* Contenedor del video */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo del video */
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que el video cubra toda la sección */
+}
+
+/* Estilo para el botón overlay */
+.btn-overlay {
+    position: absolute;
+    top: 80%; /* Centra el botón verticalmente */
+    left: 50%; /* Centra el botón horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición del botón */
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white; /* El color del texto en el botón */
+    background-color: black; /* Fondo negro para el botón */
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo del botón al hacer hover */
+.btn-overlay:hover {
+    background-color: #fbacbf; /* Color del fondo en hover */
+}
+
+/* SECCIÓN SEMANA DE SABORES */
+#semanas {
+    width: 100%;
+    max-width: 300px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fbacbf;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: #333;
+    margin-left: 20px;
+}
+
+      /* Estilos para el h2 dentro de #semanas */
+#semanas h2 {
+    font-size: 14pt;
+    color: #000000;
+    margin-bottom: 10px;
+    text-align: center;
+    transform: scale(1);
+}
+
+       /*Nuestros Bites*/
+
+#nuestros-bites {
+    font-size: 30pt;
+    color: #000000;
+    margin-bottom: 40px; 
+}
+
+
+                   /*     SECCIÓN COMPRAR Y DETALLES    */
+
+/* Ocultar todos los .slide por defecto */
+.slide {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+/* Mostrar la diapositiva activa según el botón radio seleccionado */
+#sabor1:checked ~ .slide:nth-of-type(1),
+#sabor2:checked ~ .slide:nth-of-type(2),
+#sabor3:checked ~ .slide:nth-of-type(3),
+#sabor4:checked ~ .slide:nth-of-type(4),
+#sabor5:checked ~ .slide:nth-of-type(5),
+#sabor6:checked ~ .slide:nth-of-type(6),
+#sabor7:checked ~ .slide:nth-of-type(7),
+#sabor8:checked ~ .slide:nth-of-type(8),
+#sabor9:checked ~ .slide:nth-of-type(9),
+#sabor10:checked ~ .slide:nth-of-type(10),
+#sabor11:checked ~ .slide:nth-of-type(11),
+#sabor12:checked ~ .slide:nth-of-type(12),
+#sabor13:checked ~ .slide:nth-of-type(13) {
+    display: block;
+}
+
+/* Flechas de navegación */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 20px;
+}
+
+.left-arrow {
+    left: 20px; /* Posición de la flecha izquierda */
+}
+
+.right-arrow {
+    right: 20px; /* Posición de la flecha derecha */
+}
+
+/* Ajusta el tamaño de las imágenes de flechas */
+.arrow img {
+    width: 30px !important;  /* Fuerza el tamaño deseado */
+    height: 30px !important; /* Fuerza el tamaño deseado */
+    max-width: none !important; /* Elimina cualquier restricción de tamaño máximo */
+    max-height: none !important; /* Elimina cualquier restricción de tamaño máximo */
+}
+
+/* Estilo de la diapositiva */
+.content {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 100px;
+    background-color: #FFFAF4;
+    border: 0px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+.content:hover {
+    background-color: #2A5FB1;
+    border-radius: 25px;
+    color: white;
+}
+
+.content img {
+    width: 500px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Contenedor de texto */
+.text-content {
+    margin-top: 120px; /* Ajusta este valor según lo que necesites */
+}
+
+.text-content h3 {
+    margin-top: 120px; 
+    font-size: 36px;
+    margin: 0;
+}
+
+.text-content p {
+    margin-top: 40px; 
+    font-size: 16px;
+}
+
+/* Botones de acción */
+/* Botones de acción */
+.cta-button {
+    margin-top: 110px; /* Baja el botón */
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none; /* Sin borde inicialmente */
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border-radius: 25px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px;
+    display: inline-block;
+    width: 150px; /* Ajusta el ancho del botón según necesites */
+    text-align: center;
+}
+
+/* Espacio adicional entre botones */
+.cta-button + .cta-button {
+    margin-top: 50px; /* Espacio entre los botones */
+}
+
+
+/* Estilos al hacer hover */
+.cta-button:hover {
+    background-color: #2A5FB1;
+    color: white;
+    border: 2px solid black; /* Borde aparece en hover */
+}
+
+/* Botón "Comprar" con color de fondo */
+.comprar {
+    background-color: #ED4F2E;
+    color: #FFF4FA;
+    border-radius: 25px; /* Bordes redondeados */
+}
+
+/* Hover para el botón "Comprar" */
+.comprar:hover  { background-color: #D23C20;
+    border: 2px solid #D23C20; /* Borde en hover */}
+
+
+
+
+                      /*    PERSONALIZADO     */
+
+#Personalizado .cuadrado {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 100px;
+    background-color: #FFFAF4;
+    border: 0px solid #ccc;
+    transition: background-color 0.3s;
+}
+
+#Personalizado .cuadrado:hover{
+    background-color: #ED4F2E;
+    border-radius: 25px;
+    color: white;}
+
+#Personalizado .personalizado-img {
+    width: 500px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Cambiar imagen en hover */
+#Personalizado .cuadrado:hover .personalizado-img {
+    width: 500px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Texto */
+#Personalizado .texto {
+    margin-top: 120px; /* Ajusta este valor según lo que necesites */
+}
+
+
+#Personalizado .texto h3 {
+    margin-top: 120px; 
+    font-size: 36px;
+    margin: 0;
+}
+
+
+#Personalizado .texto p {
+    margin-top: 40px; 
+    font-size: 16px;
+}
+
+/* BOTÓN PERSONALIZAR */ 
+.botón-personalizar {
+    margin-top: 110px; /* Baja el botón */
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none; /* Sin borde inicialmente */
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border-radius: 25px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px;
+    display: inline-block;
+    width: 150px; /* Ajusta el ancho del botón según necesites */
+    text-align: center;
+}
+
+/* Estilos al hacer hover */
+.botón-personalizar:hover {
+    background-color: #3361AA; /* Color deseado en hover */
+    color: white;
+    border: 2px solid none; /* Borde aparece en hover */
+}
+
+
+                           /*FOOTER*/
+
+    /* Estilos generales para el footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFAF4; /* Fondo claro para el footer */
+    color: #FFFAF4; /* Color de texto por defecto */
+    padding: 20px;
+    height: 200px; /* Ajusta la altura según el contenido */
+  }
+  
+  /* Contenedor para los enlaces arriba */
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px; /* Limita el ancho de los enlaces */
+    margin-bottom: 20px; /* Espacio entre los enlaces y la imagen */
+  }
+  
+  /* Estilos para cada enlace */
+  .footer-link {
+    text-decoration: none;
+    color: #000; /* Establece el color negro para el texto */
+    font-size: 16px;
+    margin: 0 15px; /* Espacio entre los enlaces */
+    display: flex;
+    align-items: center; /* Alinea la imagen y el texto */
+    font-weight: 700; /* Hace el texto más negrita */
+  }
+  .footer-icon {
+    margin-right: 10px; /* Menos espacio entre la imagen y el texto */
+  }
+  
+  /* Estilo para las imágenes dentro de los enlaces */
+  .footer-icon {
+    width: 30px; /* Ajusta el tamaño de las imágenes */
+
+    
+
+
+    
