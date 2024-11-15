@@ -1,4 +1,4 @@
-/* TIPOGRAFÍA */
+* TIPOGRAFÍA */
 body {
     font-family: 'Noto Sans Thai Looped', sans-serif;
     background-color: #FFFAF4;
@@ -444,6 +444,31 @@ nav {
     align-items: center; /* Alinea la imagen y el texto */
     font-weight: 700; /* Hace el texto más negrita */
   }
+
+/* Redes sociales encima del logo */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Espacio entre las redes sociales y el logo */
+}
+
+.social-link {
+    margin: 0 10px; /* Espaciado entre los íconos */
+    text-decoration: none;
+}
+
+.social-icon {
+    width: 60px; /* Tamaño de los íconos de redes sociales */
+    height: 60px;
+}
+
+/* Ajustes adicionales si necesitas centrar más el contenido */
+.footer-logo img {
+    max-width: 120px;
+    margin-top: 10px;
+}
+  
   .footer-icon {
     margin-right: 10px; /* Menos espacio entre la imagen y el texto */
   }
