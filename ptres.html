@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitea</title>
+    <link rel="icon" href="Imagenes/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="Css/styles-caja.css">
+    <!-- TIPOGRAFÍA -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="Imagenes/Logo de Bitea (Blanco).png" alt="Logo" class="logo-img">
+        </div>
+        <!-- Menú principal -->
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Menú</a></li>
+                <li><a href="Comprar.html">Comprar</a></li>
+                <li><a href="Personalizar.html">Personalizar</a></li>
+            </ul>
+        </nav>
+
+        <!-- Íconos de carrito  -->
+        <div class="icon-container">
+            <!-- El enlace del carrito -->
+            <a href="javascript:void(0)" onclick="mostrarCarrito()">
+                <img src="Imagenes/Menu/Carrito.png" alt="Carrito" class="icon">
+                <!-- El contador debe estar aquí, en el ícono del carrito -->
+                <span id="contador-carrito" class="contador-carrito">0</span>
+            </a>
+
+            <!-- Modal del carrito -->
+            <div id="modal-carrito" class="modal" style="display: none;">
+                <div class="modal-contenido">
+                    <!-- Botón para cerrar el modal -->
+                    <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+
+                    <!-- Contenido del carrito -->
+                    <div id="contenido-carrito"></div>
+
+                    <!-- Total del carrito -->
+                    <div id="total-carrito"></div>
+
+                    <!-- Botones de acción -->
+                    <button onclick="vaciarCarrito()">Vaciar carrito</button>
+                    <button onclick="irACaja()">Ir a caja</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="box-area">
+            <img src="Imagenes/Cajas/Caja sin fondo y sin sombra .png" alt="Bitea Box" class="box-image">
+        </div>
+
+        <div class="selection-area">
+            <h2 class="title">Seleccioná 3 sabores</h2>
+            <button class="buy-button" id="buy-button" disabled>Comprar</button>
+        </div>
+
+        <div class="product-item cupcake-item">
+            <img src="Imagenes/Personalizado/Cupcake con logo.png" alt="Cupcake Personalizado">
+            <span class="cupcake-personalizado">Cupcake Personalizado</span>
+        </div>
+
+        <div class="agregar-personalizado">
+            <button id="abrir-popup-personalizado">Agregar +</button>
+        </div>
+
+        <!-- Pop-up (popup-personalizado) -->
+        <div class="popup" id="popup-personalizado">
+            <span id="cerrar-popup-personalizado" class="cerrar-popup">&times;</span>
+            <h3 id="titulo-popup-personalizado">Armá tu cupcake</h3>
+            <p id="subtitulo-popup-personalizado">Elegí tu Frosting</p>
+            <img id="imagen-cupcake-personalizado" class="imagen-cupcake"
+                src="Imagenes/Personalizado/Frosting (CUPCAKE - PERSONALIZADO).png" alt="Cupcake con Frosting">
+            <div class="indicador">
+                <span id="indicador-frosting-personalizado" class="active"></span>
+                <span id="indicador-relleno-personalizado"></span>
+                <span id="indicador-masa-personalizado"></span>
+            </div>
+            <ul id="opciones-frosting-personalizado"></ul>
+            <ul id="opciones-relleno-personalizado" style="display: none;"></ul>
+            <ul id="opciones-masa-personalizado" style="display: none;"></ul>
+            <button class="continue-btn" id="continuar-personalizado" disabled>Continuar</button>
+        </div>
+
+        <!-- Pop-up (log in) -->
+        <div id="popup-login" class="popup-login hidden">
+            <div class="popup-content">
+                <button class="close-button">&times;</button>
+                <h2>Entra</h2>
+                <div class="popup-image">
+                    <img src="Imagenes/Patrón.png" alt="Imagen descriptiva">
+                </div>
+                <form>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Ingresa tu correo" required>
+
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+
+                    <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    <button type="submit" class="login-button">Entrar</button>
+                </form>
+                <p>¿No tienes cuenta? <a href="Ccuenta.html">Únete</a></p>
+                <div class="social-login">
+                    <button class="google-login">
+                        <img src="Imagenes/PopUp/Ícono Gmail.png" alt="Google" class="social-icon">
+                        Entra con Gmail
+                    </button>
+                    <button class="apple-login">
+                        <img src="Imagenes/PopUp/Ícono Apple.png" alt="Apple" class="social-icon">
+                        Entra con Apple
+                    </button>
+                    <button class="facebook-login">
+                        <img src="Imagenes/PopUp/ícono Facebook.png" alt="Facebook" class="social-icon">
+                        Entra con Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/popup-script.js"></script>
+    <script src="js/carrito.js"></script>
+
+</body>
+<!-- Footer -->
+<footer class="footer">
+    <!-- Enlaces arriba: Ubicación, Historia, Contacto -->
+    <div class="footer-links">
+        <a class="footer-link"
+            href="https://www.google.com/maps/place/El+Salvador+4689,+C1414+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.5893949,-58.4294298,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb5879646ab49:0xab54ef9b6efc2346!8m2!3d-34.5893949"
+            target="_blank">
+            <img src="Imagenes/Footer/Locación.png" alt="Ubicación" class="footer-icon">
+            Ubicación
+        </a>
+        <a class="footer-link" href="Historia.html">
+            <img src="Imagenes/Footer/Historia.png" alt="Historia" class="footer-icon">
+            Historia
+        </a>
+        <a class="footer-link" href="Crear Cuenta.html" target="_blank">
+            <img src="Imagenes/Footer/Contacto.png" alt="Contacto" class="footer-icon">
+            Contacto
+        </a>
+    </div>
+
+    <!--Redes sociales>-->
+
+    <div class="footer-social">
+        <a class="social-link" href="https://www.instagram.com/betular.patisserie/?hl=en" target="_blank">
+            <img src="Imagenes/Footer/Redes/Ig.png" alt="Instagram" class="social-icon">
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@betular.patisserie?lang=en" target="_blank">
+            <img src="Imagenes/Footer/Redes/Tik Tok.png" alt="TikTok" class="social-icon">
+        </a>
+        <a class="social-link" href="https://wa.me/1234567890" target="_blank">
+            <img src="Imagenes/Footer/Redes/WhatsApp.png" alt="WhatsApp" class="social-icon">
+        </a>
+    </div>
+
+    <!-- Imagen del logo  -->
+    <div class="footer-logo">
+        <img src="Imagenes/Footer/Logo Bitea (Negro) .png" alt="Logo">
+    </div>
+</footer>
+
+
+</html>

@@ -1,0 +1,424 @@
+/* TIPOGRAFÍA */
+body {
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    background-color: #FFFAF4;
+}
+
+/*MENU/*
+
+/* Estilos del header */
+header {
+    background-color: #2A5FB1; /* Fondo azul */
+    padding: 20px 40px; /* Espacio alrededor del contenido */
+    position: fixed; /* Hace que el menú quede fijo */
+    top: 0; /* Fija el menú en la parte superior */
+    left: 0;
+    width: 100%; /* El menú ocupa todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos entre el lado izquierdo y derecho */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+/* Para evitar que el contenido quede oculto debajo del header */
+body {
+    padding-top: 80px; /* Ajusta este valor al alto del header */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo-img {
+    height: 60px; /* Ajusta el tamaño del logo según lo necesites */
+}
+
+/* Contenedor del menú */
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Permite que el menú ocupe el espacio disponible a la izquierda */
+    justify-content: center;
+}
+
+/* Estilos del menú */
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces del menú */
+.menu li a {
+    text-decoration: none;
+    color: #FFFAF4; /* Texto en color claro */
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto de subrayado en hover */
+.menu li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFAF4; /* Subrayado en color claro */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.menu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.menu li a:hover {
+    color: #FFFAF4; /* Mantén el color claro en hover */
+}
+
+/* Estilo responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* Contenedor de los íconos (carrito y perfil) */
+.icon-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end; /* Alinea los íconos a la derecha */
+    position: absolute; /* Fija los íconos en una posición */
+    right: 110px; /* Ajusta este valor para mover los íconos más a la izquierda */
+}
+
+/* Estilos para los íconos en el menú */
+.icon-container a img.icon {
+    width: 24px;  /* Tamaño del ícono, puedes ajustarlo según sea necesario */
+    height: auto; /* Mantener la proporción de la imagen */
+    transition: transform 0.3s ease; /* Animación suave para el hover */
+}
+
+/* Efecto al pasar el mouse (hover) sobre los íconos */
+.icon-container a:hover img.icon {
+    transform: scale(2.); /* Aumenta el tamaño del ícono ligeramente */
+}
+
+
+
+/* NUESTRA HISTORIA */
+.nuestra-historia {
+    background-position: center -70px; /* Esto se sobrescribe por el "style" en HTML */
+    padding: 60px;
+    color: white;
+}
+
+.nuestra-historia .contenido-historia {
+    display: block; /* Cambiar a bloque para apilar los elementos verticalmente */
+    justify-content: center;
+    gap: 20px;
+}
+
+.imagen-tienda, .imagen-cartel {
+    width: 180px; /* Forzar tamaño */
+    height: auto; /* Mantener la proporción */
+}
+
+/* Estilo para la imagen de la tienda */
+.nuestra-historia .imagen-tienda {
+    max-width: 180px !important; /* Tamaño específico */
+    border-radius: 20px; /* Bordes redondeados */
+    box-shadow: 
+        -10px 10px 0 0 #FFC7D1 !important; /* Borde rosa solo en el lado izquierdo */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra */
+    margin-left: 150px !important; /* Espaciado a la derecha */
+    margin-bottom: 10px;
+}
+
+/* Estilo para la imagen del cartel */
+.nuestra-historia .imagen-cartel {
+    max-width: 140px !important; /* Tamaño más pequeño */
+    box-shadow: 
+        -10px 10px 0 0 #FFC7D1; /* Borde rosa solo en el lado izquierdo */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-left: -40px; /* Espaciado a la izquierda */
+    margin-bottom: -50px;
+}
+
+.nuestra-historia h1 {
+    font-size: 24pt; /* Cambia el tamaño del título */
+    font-weight: bold; /* Define el grosor de la fuente */
+    color: #FFFAF4; /* Cambia el color del texto */
+    margin-top: 0px; 
+    margin-left: 260px
+}
+
+#texto-uno {
+    font-size: 14pt;
+    text-align: justify; /* Justifica el texto */
+    color:  #FFFAF4; /* Amarillo dorado */
+    margin-bottom: -150px; /* Espaciado entre los textos */
+    margin-top: -250px;
+    margin-left: 380px;
+    margin-right: 180px;
+}
+
+/* Estilo para el segundo bloque de texto */
+#texto-dos {
+    font-size: 14pt;
+    text-align: justify; /* Justifica el texto */
+    margin-top: 230px; /* Espaciado entre los textos */
+    margin-left: 450px;
+    margin-right: 180px;
+    color:  #FFFAF4 /* Blanco grisáceo */
+    
+    
+}
+
+
+/* REVIEWS */
+.reviews {
+    padding: 50px 20px; /* Espaciado interno */
+    text-align: left; /* Centrar el texto */
+    background-color: #fffaf4; /* Fondo claro */
+}
+
+.reviews h2 {
+    font-size: 2em;
+    margin-bottom: 24pt;
+    color: black;
+    margin-top: 10px;
+    margin-left: 290px
+    
+}
+
+/* Contenedor de las tarjetas */
+.review-cards {
+    display: flex; /* Activa diseño flexible */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px; /* Espaciado entre tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas pequeñas */
+}
+
+/* Diseño de cada tarjeta */
+.card {
+    background-color: #FFFAF4; /* Fondo blanco */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    max-width: 250px; /* Ancho máximo de cada tarjeta */
+    text-align: left; /* Alineación del texto */
+    border: 1px solid black; /* Borde ligero */
+}
+
+.card p {
+    font-size: 1em;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.card span {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: black;
+    
+}
+
+                           /*FOOTER*/
+
+    /* Estilos generales para el footer */
+    .footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #FFFAF4; /* Fondo claro para el footer */
+        color: #FFFAF4; /* Color de texto por defecto */
+        padding: 20px;
+        height: 200px; /* Ajusta la altura según el contenido */
+      }
+      
+      /* Contenedor para los enlaces arriba */
+      .footer-links {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 800px; /* Limita el ancho de los enlaces */
+        margin-bottom: 20px; /* Espacio entre los enlaces y la imagen */
+      }
+      
+      /* Estilos para cada enlace */
+      .footer-link {
+        text-decoration: none;
+        color: #000; /* Establece el color negro para el texto */
+        font-size: 16px;
+        margin: 0 15px; /* Espacio entre los enlaces */
+        display: flex;
+        align-items: center; /* Alinea la imagen y el texto */
+        font-weight: 700; /* Hace el texto más negrita */
+      }
+    
+    /* Redes sociales encima del logo */
+    .footer-social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px; /* Espacio entre las redes sociales y el logo */
+    }
+    
+    .social-link {
+        margin: 0 10px; /* Espaciado entre los íconos */
+        text-decoration: none;
+    }
+    
+    .social-icon {
+        width: 60px; /* Tamaño de los íconos de redes sociales */
+        height: 60px;
+    }
+    
+    /* Ajustes adicionales si necesitas centrar más el contenido */
+    .footer-logo img {
+        max-width: 120px;
+        margin-top: 10px;
+    }
+    
+      
+      .footer-icon {
+        margin-right: 10px; /* Menos espacio entre la imagen y el texto */
+      }
+      
+      /* Estilo para las imágenes dentro de los enlaces */
+      .footer-icon {
+        width: 30px; /* Ajusta el tamaño de las imágenes */
+    }
+
+/*CARRITO*/
+/* Estilos para la modal */
+#modal-carrito {
+    position: fixed;
+    top: 0;
+    right: 0; /* Esto asegura que el modal se alinee a la derecha */
+    width: 25%; /* Ajusta el ancho del modal al 25% del ancho de la pantalla */
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: none;
+    z-index: 1000;
+    overflow-y: auto; /* Permite desplazamiento si el contenido es más largo */
+}
+
+/* Fondo del modal */
+#modal-carrito::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Estilo del contenido dentro del modal */
+#contenido-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilo de los productos */
+.producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.producto img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.producto button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.producto button:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilo del total del carrito */
+#total-carrito {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Botón para cerrar el modal */
+#cerrar-carrito {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#cerrar-carrito:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilos del contador del carrito en la parte superior */
+#contador-carrito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff9800;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+
+#contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}

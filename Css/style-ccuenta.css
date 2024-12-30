@@ -1,0 +1,648 @@
+/* TIPOGRAFÍA */
+body {
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    background-image: url('Imagenes/Fondo.png');
+    /* Imagen de fondo */
+    background-size: auto;
+    /* Para que se repita correctamente */
+    background-position: center;
+    background-repeat: repeat;
+    /* Repetición del fondo */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*MENU/*
+
+/* Estilos del header */
+header {
+    background-color: #2A5FB1;
+    /* Fondo azul */
+    padding: 20px 40px;
+    /* Espacio alrededor del contenido */
+    position: fixed;
+    /* Hace que el menú quede fijo */
+    top: 0;
+    /* Fija el menú en la parte superior */
+    left: 0;
+    width: 100%;
+    /* El menú ocupa todo el ancho de la pantalla */
+    z-index: 1000;
+    /* Asegura que el menú esté por encima de otros elementos */
+    display: flex;
+    justify-content: space-between;
+    /* Espacia los elementos entre el lado izquierdo y derecho */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+}
+
+/* Para evitar que el contenido quede oculto debajo del header */
+body {
+    padding-top: 80px;
+    /* Ajusta este valor al alto del header */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo-img {
+    height: 60px;
+    /* Ajusta el tamaño del logo según lo necesites */
+}
+
+/* Contenedor del menú */
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    /* Permite que el menú ocupe el espacio disponible a la izquierda */
+    justify-content: center;
+}
+
+/* Estilos del menú */
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces del menú */
+.menu li a {
+    text-decoration: none;
+    color: #FFFAF4;
+    /* Texto en color claro */
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto de subrayado en hover */
+.menu li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFAF4;
+    /* Subrayado en color claro */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.menu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.menu li a:hover {
+    color: #FFFAF4;
+    /* Mantén el color claro en hover */
+}
+
+/* Estilo responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* Contenedor de los íconos (carrito y perfil) */
+.icon-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    /* Alinea los íconos a la derecha */
+    position: absolute;
+    /* Fija los íconos en una posición */
+    right: 110px;
+    /* Ajusta este valor para mover los íconos más a la izquierda */
+}
+
+/* Estilos para los íconos en el menú */
+.icon-container a img.icon {
+    width: 24px;
+    /* Tamaño del ícono, puedes ajustarlo según sea necesario */
+    height: auto;
+    /* Mantener la proporción de la imagen */
+    transition: transform 0.3s ease;
+    /* Animación suave para el hover */
+}
+
+/* Efecto al pasar el mouse (hover) sobre los íconos */
+.icon-container a:hover img.icon {
+    transform: scale(2.);
+    /* Aumenta el tamaño del ícono ligeramente */
+}
+
+
+/*BASE DE LA PAGINA*/
+
+/* Contenedor del formulario */
+.form-container {
+    background-color: #FFFAF4;
+    /* Fondo blanco */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra */
+    max-width: 400px;
+    width: 100%;
+    max-height: 600px;
+    margin: auto;
+    text-align: center;
+    /* Centra el contenido */
+}
+
+/* Imagen (logo) */
+.small-image {
+    max-width: 60px;
+    /* Tamaño máximo */
+    max-height: auto;
+    margin-bottom: 20px;
+    /* Espacio entre la imagen y el título */
+}
+
+.form-container h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    color: #333;
+}
+
+form label {
+    color: #333;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    font-weight: normal !important;
+    /* Elimina la negrita */
+    text-align: left;
+    /* Alinea las etiquetas a la izquierda */
+    display: block;
+    /* Asegura que las etiquetas estén en su propia línea */
+}
+
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #E36A2E;
+    /* Color similar al botón de tu ejemplo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: -10px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #D15C28;
+}
+
+form p {
+    font-size: 14px;
+    color: #555;
+    margin-top:10px;
+}
+
+/* Estilo para el enlace "Iniciar sesión" */
+.login-link {
+    color: black;
+    /* Color similar al botón */
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+/* POP UP */
+/* Estilo del pop-up */
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+
+/* Ocultar el pop-up inicialmente */
+#popup.hidden {
+    display: none;
+}
+
+#popup .popup-content {
+    background-color: #fffaf4;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 1000px;
+    height: 600px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Estilo de la imagen */
+#popup .popup-image {
+    margin-left: 469px;
+}
+
+#popup .popup-image img {
+    margin-top: -83px;
+    max-width: 550px;
+    height: 629px;
+    border-radius: 8px;
+}
+
+/* Botón de cerrar */
+#popup .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Títulos y formularios */
+#popup h2 {
+    text-align: left;
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+/* Estilo del formulario */
+#popup form {
+    margin-top: -550px;
+}
+
+
+#popup form label {
+    display: block;
+    font-weight: bold !important;
+    margin-bottom: 10px !important;
+}
+
+#popup form input {
+    width: 40%;
+    padding: 10px;
+    margin-bottom: 1px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#popup .forgot-password {
+    display: flex;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-left: 239px;
+    font-size: 0.7em;
+    color: #ff6b6b;
+}
+
+#popup form label,
+#popup form input {
+    margin-bottom: 10px; /* Define un espacio uniforme */
+    display: block; /* Asegúrate de que no estén en línea */
+}
+
+/* Botón de login */
+#popup .login-button {
+    width: 22%;
+    display: block; /* Asegúrate de que no estén en línea */
+    padding: 10px;
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    margin-left: 95px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* ¿No tienes cuenta? Únete */
+
+#popup form + p {
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    margin-left: 125px;
+}
+
+#popup form + p a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#popup form + p a:hover {
+    text-decoration: underline;
+}
+
+/* Redes sociales para loguearte dentro del pop-up */
+#popup .social-login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+#popup .social-login button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: 40%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+}
+
+#popup .apple-login {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Mantén todo alineado a la izquierda */
+    background-color: black;
+    color: white;
+    height: 50px; /* Ajusta el valor según el diseño */
+    padding: 0; /* Opcional: elimina el relleno para evitar conflictos */
+}    
+
+#popup .apple-login img {
+    width: 100px !important;
+    height: 100px !important;
+    margin-left: -40px; /* Elimina el margen izquierdo que pueda estar separando la imagen del texto */
+    margin-right: -28px; /* Añade un pequeño margen entre la imagen y el texto */
+}
+/* Estilo del texto (span) */
+#popup .apple-login span {
+    margin-left: 0; /* Elimina cualquier margen que pueda desplazar el texto */
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    flex-grow: 0; /* No permite que el texto ocupe más espacio */
+}
+/* Google Button */
+
+/* Estilos para las imágenes de cada botón */
+#popup .google-login img {
+    width: 30px; /* Ajusta el tamaño de la imagen de Google */
+    height: 20px;
+}
+
+#popup .facebook-login img {
+    width: 25px; /* Ajusta el tamaño de la imagen de Facebook */
+    height: 25px;
+}
+
+/* Estilos para los botones */
+#popup .google-login {
+    background-color: #eee;
+    color: #333;
+}
+
+
+#popup .facebook-login {
+    background-color: #4267b2;
+    color: white;
+}
+
+
+
+
+/*FOOTER*/
+
+/* Estilos generales para el footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFAF4;
+    /* Fondo claro para el footer */
+    color: #FFFAF4;
+    /* Color de texto por defecto */
+    padding: 20px;
+    height: 200px;
+    /* Ajusta la altura según el contenido */
+}
+
+/* Contenedor para los enlaces arriba */
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; /* Limita el ancho de los enlaces */
+    margin-bottom: 20px; /* Espacio entre los enlaces y la imagen */
+}
+
+/* Estilos para cada enlace */
+.footer-link {
+    text-decoration: none;
+    color: #000; /* Establece el color negro para el texto */
+    font-size: 16px;
+    margin: 0 15px;/* Espacio entre los enlaces */
+    display: flex;
+    align-items: center;/* Alinea la imagen y el texto */
+    font-weight: 700;
+    /* Hace el texto más negrita */
+}
+
+/* Redes sociales encima del logo */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    /* Espacio entre las redes sociales y el logo */
+}
+
+.social-link {
+    margin: 0 10px;
+    /* Espaciado entre los íconos */
+    text-decoration: none;
+}
+
+.social-icon {
+    width: 60px;/* Tamaño de los íconos de redes sociales */
+    height: 60px;
+}
+
+/* Ajustes adicionales si necesitas centrar más el contenido */
+.footer-logo img {
+    max-width: 120px;
+    margin-top: 10px;
+}
+
+
+.footer-icon {
+    margin-right: 10px; /* Menos espacio entre la imagen y el texto */
+}
+
+/* Estilo para las imágenes dentro de los enlaces */
+.footer-icon {
+    width: 30px;/* Ajusta el tamaño de las imágenes */
+}
+
+/*CARRITO*/
+
+/* Estilos para la modal */
+#modal-carrito {
+    position: fixed;
+    top: 0;
+    right: 0; /* Esto asegura que el modal se alinee a la derecha */
+    width: 25%; /* Ajusta el ancho del modal al 25% del ancho de la pantalla */
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: none;
+    z-index: 1000;
+    overflow-y: auto; /* Permite desplazamiento si el contenido es más largo */
+}
+
+/* Fondo del modal */
+#modal-carrito::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* Estilo del contenido dentro del modal */
+#contenido-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilo de los productos */
+.producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.producto img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.producto button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.producto button:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilo del total del carrito */
+#total-carrito {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Botón para cerrar el modal */
+#cerrar-carrito {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#cerrar-carrito:hover {
+    background-color: #d32f2f;
+}
+
+/* Estilos del contador del carrito en la parte superior */
+#contador-carrito {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff9800;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+#contador-carrito {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}

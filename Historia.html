@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitea</title>
+    <link rel="icon" href="Imagenes/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="Css/style-historia.css">
+
+    <!-- TIPOGRAFÍA -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        referrerpolicy="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="Imagenes/Logo de Bitea (Blanco).png" alt="Logo" class="logo-img">
+        </div>
+
+        <!-- Menú principal -->
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Menú</a></li>
+                <li><a href="Comprar.html">Comprar</a></li>
+                <li><a href="Personalizar.html">Personalizar</a></li>
+            </ul>
+            <!-- Íconos de carrito  -->
+            <div class="icon-container">
+                <!-- El enlace del carrito -->
+                <a href="javascript:void(0)" onclick="mostrarCarrito()">
+                    <img src="Imagenes/Menu/Carrito.png" alt="Carrito" class="icon">
+                    <!-- El contador debe estar aquí, en el ícono del carrito -->
+                    <span id="contador-carrito" class="contador-carrito">0</span>
+                </a>
+
+                <!-- Modal del carrito -->
+                <div id="modal-carrito" class="modal" style="display: none;">
+                    <div class="modal-contenido">
+                        <!-- Botón para cerrar el modal -->
+                        <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+
+                        <!-- Contenido del carrito -->
+                        <div id="contenido-carrito"></div>
+
+                        <!-- Total del carrito -->
+                        <div id="total-carrito"></div>
+
+                        <!-- Botones de acción -->
+                        <button onclick="vaciarCarrito()">Vaciar carrito</button>
+                        <button onclick="irACaja()">Ir a caja</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <!-- Íconos de carrito y perfil -->
+            <div class="icon-container">
+                <a href="Carrito.html"><img src="Imagenes/Menu/Carrito.png" alt="Carrito" class="icon"></a>
+                <a href="Perfil.html"><img src="Imagenes/Menu/Perfil Bitea (Blanco).png" alt="Perfil" class="icon"></a>
+            </div>
+    </header>
+
+    <section class="nuestra-historia"
+        style="background-image: url('Imagenes/Historia/Fondo.png'); background-size: cover; background-position: center -100px; padding: 70px; color: white;">
+        <h1>Nuestra Historia</h1>
+        <div class="contenido-historia">
+            <img src="Imagenes/Historia/Foto Historia.jpg" alt="Imagen de la tienda" class="imagen-tienda">
+            <img src="Imagenes/Historia/Cartel MockUp Negocio.jpeg" alt="Imagen de cartel" class="imagen-cartel">
+
+            <p id="texto-uno">
+                En un pequeño rincón de la ciudad, nació Bitea, un sueño dulce inspirado por la pasión por crear
+                momentos mágicos a través de cupcakes. Desde los primeros días, cada receta fue pensada para ser una
+                explosión de sabores, donde la frescura y el detalle se combinan para crear experiencias inolvidables.
+            </p>
+            <p id="texto-dos">
+                Lo que comenzó como una pequeña aventura en una  cocina hogareña se transformó en el lugar favorito de 
+                los amantes de lo dulce, donde cada cupcake cuenta  una historia. En Bitea, creemos que cada bocado
+                debe  ser tan especial como el momento en que lo   compartes.
+            </p>
+        </div>
+    </section>
+    <!-- Sección de "Reviews" -->
+    <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="review-cards">
+            <div class="card">
+                <p>“Amo la dedicación y amor que le ponen a cada cupcake, son por lejos los mejores”.</p>
+                <span>— Macarena García</span>
+            </div>
+            <div class="card">
+                <p>“Mi mayor descubrimiento fue encontrarlos, los amo”.</p>
+                <span>— Nadia Loretz</span>
+            </div>
+            <div class="card">
+                <p>“No encuentro otro lugar que sea tan rico como este”.</p>
+                <span>— Sandra Orenstein</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/carrito.js"></script>
+
+</body>
+
+<!-- Footer -->
+<footer class="footer">
+    <!-- Enlaces arriba: Ubicación, Historia, Contacto -->
+    <div class="footer-links">
+        <a class="footer-link"
+            href="https://www.google.com/maps/place/El+Salvador+4689,+C1414+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.5893949,-58.4294298,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb5879646ab49:0xab54ef9b6efc2346!8m2!3d-34.5893949"
+            target="_blank">
+            <img src="Imagenes/Footer/Locación.png" alt="Ubicación" class="footer-icon">
+            Ubicación
+        </a>
+        <a class="footer-link" href="Historia.html">
+            <img src="Imagenes/Footer/Historia.png" alt="Historia" class="footer-icon">
+            Historia
+        </a>
+        <a class="footer-link" href="Crear Cuenta.html" target="_blank">
+            <img src="Imagenes/Footer/Contacto.png" alt="Contacto" class="footer-icon">
+            Contacto
+        </a>
+    </div>
+
+    <!--Redes sociales>-->
+
+    <div class="footer-social">
+        <a class="social-link" href="https://www.instagram.com/betular.patisserie/?hl=en" target="_blank">
+            <img src="Imagenes/Footer/Redes/Ig.png" alt="Instagram" class="social-icon">
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@betular.patisserie?lang=en" target="_blank">
+            <img src="Imagenes/Footer/Redes/Tik Tok.png" alt="TikTok" class="social-icon">
+        </a>
+        <a class="social-link" href="https://wa.me/1234567890" target="_blank">
+            <img src="Imagenes/Footer/Redes/WhatsApp.png" alt="WhatsApp" class="social-icon">
+        </a>
+    </div>
+
+    <!-- Imagen del logo  -->
+    <div class="footer-logo">
+        <img src="Imagenes/Footer/Logo Bitea (Negro) .png" alt="Logo">
+    </div>
+</footer>
+
+
+</html>
