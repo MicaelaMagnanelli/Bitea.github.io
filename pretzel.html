@@ -1,0 +1,371 @@
+<head></head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitea</title>
+<link rel="icon" href="Imagenes/Logo.png" type="image/x-icon">
+<link rel="stylesheet" href="Css/style-sabores.css">
+
+<!-- TIPOGRAFÍA -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+
+<body>
+    <!-- Menú de navegación -->
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="Imagenes/Logo de Bitea (Blanco).png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+
+
+        <!-- Menú principal -->
+       <nav>
+            <ul class="menu">
+                <li><a href="index.html">Menú</a></li>
+                <li><a href="Comprar.html">Comprar</a></li>
+                <li><a href="#" id="abrir-popup-personalizado">Personalizar</a></li>
+            </ul>
+        </nav>
+
+        <!-- Íconos de carrito  -->
+        <div class="icon-container">
+            <!-- El enlace del carrito -->
+            <a href="javascript:void(0)" onclick="mostrarCarrito()">
+                <img src="Imagenes/Menu/Carrito.png" alt="Carrito" class="icon">
+                <!-- El contador debe estar aquí, en el ícono del carrito -->
+                <span id="contador-carrito" class="contador-carrito">0</span>
+            </a>
+        </div>
+
+
+        <!-- Modal del carrito -->
+        <div id="modal-carrito" class="modal" style="display: none;">
+            <div class="modal-contenido">
+                <!-- Botón para cerrar el modal -->
+                <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+
+                <!-- Contenido del carrito -->
+                <div id="contenido-carrito"></div>
+
+                <!-- Total del carrito -->
+                <div id="total-carrito"></div>
+
+                <!-- Botón de finalizar compra en el footer -->
+                <div id="footer-carrito">
+                    <button class="boton-finalizar" onclick="irACaja()">Finalizar compra</button>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <section class="sabores"
+        style="background-image: url('Imagenes/Fondo/Fondo de Detalles Rosa.png'); background-size: cover; background-position: center -315px; padding: 130px; color: white;">
+        <div id="details">
+            <h1>Pretzel Crunch</h1>
+            <p>Cada mordisco combina el contraste irresistible del caramelo dulce con el toque salado del pretzel y un
+                toque de caramelo.</p>
+            <img src="Imagenes/Sabores/12. C. PRETZEL Crunch (SIN FONDO).png" alt="Pretzel Crunch">
+        </div>
+
+
+        <div class="botones">
+            <a href="Comprar.html" class="comprar">Comprar</a>
+            <button id="favoriteButton">
+                <img id="heartIcon" src="Imagenes/Sabores/Favorito/Ícono Favoritos.png" alt="Agregar a Favorito" />
+                Agregar a favorito
+            </button>
+        </div>
+
+        <div class="estrellas">
+            <img src="Imagenes/Sabores/Favorito/Estrella completa.png" alt="estrella uno">
+            <img src="Imagenes/Sabores/Favorito/Estrella completa.png" alt="estrella dos">
+            <img src="Imagenes/Sabores/Favorito/Estrella completa.png" alt="estrella tres">
+            <img src="Imagenes/Sabores/Favorito/Estrella completa.png" alt="estrella cuatro">
+            <img src="Imagenes/Sabores/Favorito/Estrella y media.png" alt="media estrella ">
+            <p>4.5 / 1.679 Reviews</p>
+        </div>
+    </section>
+
+    <!-- Sección de "Reviews" -->
+    <section class="reviews">
+        <h2>Reviews</h2>
+        <div class="review-cards">
+            <div class="card">
+                <p>“MMMM Deliciosos, cada día soy más adicta a este sabor”</p>
+                <span>— Milagros Romo</span>
+            </div>
+            <div class="card">
+                <p>“Siempre los compro para ir a lo de mi amiga y nos encantan, Es nuetro ritual”</p>
+                <span>— Aníbal Perez</span>
+            </div>
+            <div class="card">
+                <p>“Soy fan de estos sabores raros que sacan”</p>
+                <span>— Selene Matio</span>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ETIQUETA NUTRICIONAL E INGREDIENTES-->
+    <div class="accordion">
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <strong>Ingredientes</strong>
+                <img class="arrow" src="Imagenes/Flechas/Flecha.png" alt="Flecha hacia abajo">
+            </button>
+            <div class="accordion-content">
+                <p><strong>Contiene: Azúcar, Leche, Trigo, Huevo.</strong></p>
+                <p>
+                    Nuestros cupcakes se preparan en el lugar y pueden entrar en contacto con diferentes alérgenos
+                    durante su producción. Por favor, tenga en cuenta que cualquiera de nuestros productos puede
+                    contener alérgenos como maní, frutos secos, leche, huevo, trigo, soya y sésamo.
+                </p>
+                <p>El consumo diario recomendado es de 2.000 calorías, pero las necesidades calóricas pueden variar.</p>
+                <p>*Las calorías se calculan por porción. El tamaño de la porción varía según el producto*</p>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <button class="accordion-header" onclick="toggleAccordion(this)">
+                <strong>Etiqueta Nutricional</strong>
+                <img class="arrow" src="Imagenes/Flechas/Flecha.png" alt="Flecha hacia abajo">
+            </button>
+            <div class="accordion-content">
+                <img src="Imagenes/Sabores/Favorito/Etiqueta nutricional.png" alt="Etiqueta Nutricional"
+                    class="nutritional-label" style="width: 50%; max-width: 300px; height: auto;">
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up (popup-personalizado) -->
+    <div class="popup" id="popup-personalizado">
+        <span id="cerrar-popup-personalizado" class="cerrar-popup">&times;</span>
+        <h3 id="titulo-popup-personalizado">Armá tu cupcake</h3>
+        <p id="subtitulo-popup-personalizado">Elegí tu Frosting</p>
+        <img id="imagen-cupcake-personalizado" class="imagen-cupcake"
+            src="Imagenes/Personalizado/Frosting (CUPCAKE - PERSONALIZADO).png" alt="Cupcake con Frosting">
+        <div class="indicador">
+            <span id="indicador-frosting-personalizado" class="active"></span>
+            <span id="indicador-relleno-personalizado"></span>
+            <span id="indicador-masa-personalizado"></span>
+        </div>
+        <ul id="opciones-frosting-personalizado"></ul>
+        <ul id="opciones-relleno-personalizado" style="display: none;"></ul>
+        <ul id="opciones-masa-personalizado" style="display: none;"></ul>
+        <button class="continue-btn" id="continuar-personalizado" disabled>Continuar</button>
+    </div>
+
+    <!-- Insertar el código JavaScript aquí -->
+    <script>
+        const popup = document.getElementById('popup-personalizado');
+        const abrirPopup = document.getElementById('abrir-popup-personalizado');
+        const cerrarPopup = document.getElementById('cerrar-popup-personalizado');
+        const continuar = document.getElementById('continuar-personalizado');
+        const tituloPopup = document.getElementById('titulo-popup-personalizado');
+        const subtituloPopup = document.getElementById('subtitulo-popup-personalizado');
+        const imagenCupcake = document.getElementById('imagen-cupcake-personalizado');
+        const indicadores = document.querySelectorAll('.indicador span');
+
+        let etapaActual = 0; // 0 = Frosting, 1 = Relleno, 2 = Masa
+
+        const etapas = [
+            {
+                titulo: 'Armá tu cupcake',
+                subtitulo: 'Elegí tu Frosting',
+                imagen: 'Imagenes/Personalizado/Frosting (CUPCAKE - PERSONALIZADO).png',
+                opciones: [
+                    'Frosting de manzanas asadas',
+                    'Frosting de limón',
+                    'Ganash de chocolate amargo',
+                    'Frosting de queso y caramelo',
+                    'Cobertura de chocolate y DDL',
+                    'Crema helada',
+                    'Froosting de pistacho',
+                    'Froosting de banana y caramelo',
+                    'Froosting de caramelo, sal y pretzel',
+                    'Froostin Flynn',
+                    'Froostin de cookies and cream',
+                    'Frosting cereales'
+                ],
+                id: 'opciones-frosting-personalizado'
+            },
+            {
+                titulo: 'Armá tu cupcake',
+                subtitulo: 'Elegí tu Relleno',
+                imagen: 'Imagenes/Personalizado/Relleno (CUPCAKE - PERSONALIZADO).png',
+                opciones: [
+                    'Manzanas y caramelo',
+                    'Crema de limón y merengue',
+                    'Crema de cacao',
+                    'DDL Bitea',
+                    'Crema Helada',
+                    'Pistacho y nuez',
+                    'Banana y caramelo',
+                    'Flynn Bite',
+                    'Cream and cookies',
+                    'Caramelo y pretzel',
+                    'Cereales'
+                ],
+                id: 'opciones-relleno-personalizado'
+            },
+            {
+                titulo: 'Armá tu cupcake',
+                subtitulo: 'Elegí tu Masa',
+                imagen: 'Imagenes/Personalizado/Masa (CUPCAKES - PERSONALIZADO).png',
+                opciones: [
+                    'Chocolate',
+                    'Vainilla',
+                    'Marmolada',
+                    'Red Velvet'
+                ],
+                id: 'opciones-masa-personalizado'
+            }
+        ];
+
+        const habilitarContinuar = () => {
+            const opcionSeleccionada = document.querySelector(`#${etapas[etapaActual].id} input:checked`);
+            continuar.disabled = !opcionSeleccionada; // Habilitar o deshabilitar el botón según si hay una opción seleccionada
+        };
+
+        const manejarSeleccion = (event, categoria) => {
+            const opcionesDelGrupo = document.querySelectorAll(`#${categoria} input[type="checkbox"]`);
+
+            // Desmarcar las otras opciones si se selecciona una
+            opcionesDelGrupo.forEach(opcion => {
+                if (opcion !== event.target) {
+                    opcion.checked = false; // Desmarcar las demás opciones
+                }
+            });
+
+            habilitarContinuar(); // Habilitar o deshabilitar el botón de continuar
+        };
+
+        const continuarHandler = () => {
+            if (etapaActual < etapas.length - 1) {
+                etapaActual++;
+                actualizarContenido();
+            } else {
+                // Redirigir a la página Cajaspersonalizar.html cuando llegamos al último paso
+                window.location.href = 'Cajaspersonalizar.html';
+            }
+        };
+
+        const mostrarPopup = () => {
+            popup.classList.add('active');
+            actualizarContenido();
+        };
+
+        const cerrarPopupHandler = () => {
+            popup.classList.remove('active');
+            etapaActual = 0; // Reiniciar etapa al cerrar
+            actualizarContenido();
+        };
+
+        const actualizarContenido = () => {
+            const etapa = etapas[etapaActual];
+
+            // Actualizar textos
+            tituloPopup.textContent = etapa.titulo;
+            subtituloPopup.textContent = etapa.subtitulo;
+
+            // Actualizar imagen
+            imagenCupcake.src = etapa.imagen;
+
+            // Mostrar solo las opciones de la etapa actual
+            document.querySelectorAll("ul[id^='opciones-']").forEach((ul) => {
+                ul.style.display = 'none'; // Ocultar todas las listas
+            });
+
+            const listaOpciones = document.querySelector(`#${etapa.id}`);
+            listaOpciones.style.display = 'block'; // Mostrar la lista actual
+
+            listaOpciones.innerHTML = etapa.opciones
+                .map(opcion => `<li><input type="checkbox"> ${opcion}</li>`)
+                .join('');
+
+            habilitarContinuar(); // Verificar si se habilita el botón de continuar
+
+            // Delegar el evento a cada checkbox para manejar la selección
+            listaOpciones.querySelectorAll('input').forEach(input => {
+                input.addEventListener('change', (event) => {
+                    manejarSeleccion(event, etapa.id);
+                });
+            });
+
+            // Actualizar indicador visual
+            indicadores.forEach((indicador, index) => {
+                indicador.classList.toggle('active', index === etapaActual);
+            });
+        };
+
+        // Abre el popup al hacer clic en el botón Personalizar
+        abrirPopup.addEventListener('click', mostrarPopup);
+
+        // Cerrar el popup al hacer clic en el icono de cerrar
+        cerrarPopup.addEventListener('click', cerrarPopupHandler);
+
+        // Manejar el evento de continuar
+        continuar.addEventListener('click', continuarHandler);
+    </script>
+
+
+
+
+
+    <script src="js/sabores.js"></script>
+    <script src="js/carrito.js"></script>
+
+
+</body>
+
+
+<!-- Footer -->
+<footer class="footer">
+    <!-- Enlaces arriba: Ubicación, Historia, Contacto -->
+    <div class="footer-links">
+        <a class="footer-link"
+            href="https://www.google.com/maps/place/El+Salvador+4689,+C1414+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.5893949,-58.4294298,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb5879646ab49:0xab54ef9b6efc2346!8m2!3d-34.5893949"
+            target="_blank">
+            <img src="Imagenes/Footer/Locación.png" alt="Ubicación" class="footer-icon">
+            Ubicación
+        </a>
+        <a class="footer-link" href="Historia.html">
+            <img src="Imagenes/Footer/Historia.png" alt="Historia" class="footer-icon">
+            Historia
+        </a>
+        <a class="footer-link" href="mailto:mica_magna@hotmail.com" target="_blank">
+            <img src="Imagenes/Footer/Contacto.png" alt="Contacto" class="footer-icon">
+            Contacto
+        </a>
+    </div>
+
+    <!--Redes sociales>-->
+
+    <div class="footer-social">
+        <a class="social-link" href="https://www.instagram.com/betular.patisserie/?hl=en" target="_blank">
+            <img src="Imagenes/Footer/Redes/Ig.png" alt="Instagram" class="social-icon">
+        </a>
+        <a class="social-link" href="https://www.tiktok.com/@betular.patisserie?lang=en" target="_blank">
+            <img src="Imagenes/Footer/Redes/Tik Tok.png" alt="TikTok" class="social-icon">
+        </a>
+        <a class="social-link" href="https://wa.me/1234567890" target="_blank">
+            <img src="Imagenes/Footer/Redes/WhatsApp.png" alt="WhatsApp" class="social-icon">
+        </a>
+    </div>
+
+    <!-- Imagen del logo con enlace -->
+    <div class="footer-logo">
+        <a href="index.html">
+            <img src="Imagenes/Footer/Logo Bitea (Negro) .png" alt="Logo">
+        </a>
+    </div>
+</footer>
+
+
+</html>
