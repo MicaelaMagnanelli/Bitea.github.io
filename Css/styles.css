@@ -1,0 +1,1131 @@
+/* TIPOGRAFÍA */
+body {
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    background-color: #FFFAF4;
+}
+
+/*MENU/*
+
+/* Estilos del header */
+header {
+    background-color: #2A5FB1; /* Fondo azul */
+    padding: 20px 40px; /* Espacio alrededor del contenido */
+    position: fixed; /* Hace que el menú quede fijo */
+    top: 0; /* Fija el menú en la parte superior */
+    left: 0;
+    width: 100%; /* El menú ocupa todo el ancho de la pantalla */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos entre el lado izquierdo y derecho */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+/* Para evitar que el contenido quede oculto debajo del header */
+body {
+    padding-top: 80px; /* Ajusta este valor al alto del header */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo-img {
+    height: 60px; /* Ajusta el tamaño del logo según lo necesites */
+}
+
+/* Contenedor del menú */
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Permite que el menú ocupe el espacio disponible a la izquierda */
+    justify-content: center;
+}
+
+/* Estilos del menú */
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces del menú */
+.menu li a {
+    text-decoration: none;
+    color: #FFFAF4; /* Texto en color claro */
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto de subrayado en hover */
+.menu li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFAF4; /* Subrayado en color claro */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.menu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.menu li a:hover {
+    color: #FFFAF4; /* Mantén el color claro en hover */
+}
+
+/* Estilo responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .menu {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+/* Contenedor de los íconos (carrito y perfil) */
+.icon-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end; /* Alinea los íconos a la derecha */
+    position: absolute; /* Fija los íconos en una posición */
+    right: 110px; /* Ajusta este valor para mover los íconos más a la izquierda */
+}
+
+/* Estilos para los íconos en el menú */
+.icon-container a img.icon {
+    width: 24px;  /* Tamaño del ícono, puedes ajustarlo según sea necesario */
+    height: auto; /* Mantener la proporción de la imagen */
+    transition: transform 0.3s ease; /* Animación suave para el hover */
+}
+
+/* Efecto al pasar el mouse (hover) sobre los íconos */
+.icon-container a:hover img.icon {
+    transform: scale(2.); /* Aumenta el tamaño del ícono ligeramente */
+}
+
+
+
+                  /* VIDEO Y BOTÓN COMPRAR */
+
+/* Estilos generales para la sección hero */
+#menu {
+    position: relative;
+    width: 100%;
+    height: 815px; /* O ajusta según el tamaño de tu video */
+    overflow: hidden;
+}
+
+/* Contenedor del video */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo del video */
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que el video cubra toda la sección */
+}
+
+/* Estilo para el botón overlay */
+.btn-overlay {
+    position: absolute;
+    top: 80%; /* Centra el botón verticalmente */
+    left: 50%; /* Centra el botón horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta la posición del botón */
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white; /* El color del texto en el botón */
+    background-color: black; /* Fondo negro para el botón */
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo del botón al hacer hover */
+.btn-overlay:hover {
+    background-color: #fbacbf; /* Color del fondo en hover */
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+    #menu {
+        height: 70vh; /* Reduce la altura en pantallas pequeñas */
+    }
+
+    .btn-overlay {
+        font-size: 14px; /* Reduce el tamaño del texto del botón */
+        padding: 8px 16px; /* Ajusta el tamaño del botón */
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-overlay {
+        font-size: 12px; /* Reduce aún más el tamaño en pantallas pequeñas */
+        padding: 6px 12px;
+    }
+}
+
+
+
+              /* SEMANA DEL 8 AL 31 DE OCT*/
+#semanas {
+    width: 100%;
+    max-width: 250px;
+    margin: 40px auto;
+    padding: 10px;
+    background-color: #fbacbf;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: #333;
+    margin-left: 250px;
+    margin-bottom: 0px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #semanas {
+        max-width: 250px; /* Reducir el ancho en pantallas medianas */
+        margin-left: 50px; /* Cambiar margen izquierdo */
+        padding: 8px; /* Reducir padding */
+    }
+}
+
+
+
+      /* Estilos para el h2 dentro de #semanas */
+#semanas h2 {
+    font-size: 14pt;
+    color: #000000;
+    margin-bottom: 5px;
+    text-align: center;
+    transform: scale(1);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #semanas {
+        max-width: 250px; /* Reducir el ancho en pantallas medianas */
+        margin-left: 50px; /* Cambiar margen izquierdo */
+        padding: 8px; /* Reducir padding */
+        text-align: right; /* Cambiar alineación a la derecha */
+    }
+
+    #semanas h2 {
+        text-align: right; /* Alinear el h2 a la derecha también */
+    }
+}
+
+@media (max-width: 480px) {
+    #semanas {
+        max-width: 100%; /* Ocupar todo el ancho disponible */
+        margin-left: 0; /* Eliminar margen izquierdo */
+        padding: 5px; /* Reducir aún más el padding */
+        text-align: right; /* Alinear texto del contenedor a la derecha */
+    }
+
+    #semanas h2 {
+        text-align: right; /* Alinear el h2 a la derecha también */
+    }
+}
+
+
+
+              /*NUESTROS BITES*/
+
+/* NUESTROS BITES */
+#nuestros-bites {
+    font-size: 24pt; /* Tamaño predeterminado */
+    color: #000000;
+    margin-top: 0px; 
+    margin-left: 260px;
+}
+
+#nuestros-bites {
+    margin-bottom: 10px; /* Ajusta el valor según el espacio que necesites */
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #nuestros-bites {
+        font-size: 20pt; /* Reducir tamaño de fuente */
+        margin-left: 60px; /* Ajustar margen izquierdo */
+        text-align: left; /* Centrar texto si es necesario */
+    }
+}
+
+@media (max-width: 480px) {
+    #nuestros-bites {
+        font-size: 16pt; /* Texto más pequeño en móviles */
+        margin-left: 0; /* Eliminar margen izquierdo */
+        margin-bottom: 5px; /* Reducir margen inferior */
+        text-align: center; /* Centrar contenido */
+    }
+}
+
+
+
+                   /*     SECCIÓN COMPRAR Y DETALLES    */
+
+/* Ocultar todos los .slide por defecto */
+.slide {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+/* Ocultar los botones de radio */
+input[type="radio"] {
+    display: none;
+}
+
+/* Mostrar la diapositiva activa según el botón radio seleccionado */
+#sabor1:checked ~ .slide:nth-of-type(1),
+#sabor2:checked ~ .slide:nth-of-type(2),
+#sabor3:checked ~ .slide:nth-of-type(3),
+#sabor4:checked ~ .slide:nth-of-type(4),
+#sabor5:checked ~ .slide:nth-of-type(5),
+#sabor6:checked ~ .slide:nth-of-type(6),
+#sabor7:checked ~ .slide:nth-of-type(7),
+#sabor8:checked ~ .slide:nth-of-type(8),
+#sabor9:checked ~ .slide:nth-of-type(9),
+#sabor10:checked ~ .slide:nth-of-type(10),
+#sabor11:checked ~ .slide:nth-of-type(11),
+#sabor12:checked ~ .slide:nth-of-type(12),
+#sabor13:checked ~ .slide:nth-of-type(13) {
+    display: block;
+}
+
+/* Flechas de navegación */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 20px;
+}
+
+.left-arrow {
+    left: 10px; /* Posición de la flecha izquierda */
+}
+
+.right-arrow {
+    right: 10px; /* Posición de la flecha derecha */
+}
+
+/* Ajusta el tamaño de las imágenes de flechas */
+.arrow img {
+    width: 20px !important;  /* Fuerza el tamaño deseado */
+    height: 30px !important; /* Fuerza el tamaño deseado */
+    max-width: none !important; /* Elimina cualquier restricción de tamaño máximo */
+    max-height: none !important; /* Elimina cualquier restricción de tamaño máximo */
+}
+
+/* Estilo de la diapositiva */
+.content {
+    margin: 40px auto;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 0.1px;
+    background-color: #FFFAF4;
+    border: 0px solid #ccc;
+    transition: background-color 0.3s;
+    max-width: 1000px; /* Limitar ancho del contenedor */
+    height: 300px; /* Dejar que la altura se ajuste automáticamente */
+    border-radius: 25px; /* Bordes redondeados */
+    
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+.content:hover {
+    background-color: #2A5FB1;
+    border-radius: 25px;
+    color: white;
+}
+
+.content img {
+    width: 500px;
+    height: 350px;
+    margin-right: 20px;
+}
+
+/* Contenedor de texto */
+.text-content {
+    margin-top: 40px; /* Ajusta este valor según lo que necesites */
+}
+
+.text-content h3 {
+    margin-top: 80px; 
+    font-size: 24px;
+    margin: 0px;
+}
+
+.text-content p {
+    margin-top: 40px; /* Espacio superior */
+    font-size: 14px;
+    padding-right: 70px; /* Espacio solo en el lado izquierdo */
+}
+
+
+/* Botones de acción */
+/* Botones de acción */
+.cta-button {
+    margin-top: 40px; /* Baja el botón */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none; /* Sin borde inicialmente */
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border-radius: 25px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px;
+    display: inline-block;
+    width: 150px; /* Ajusta el ancho del botón según necesites */
+    text-align: center;
+}
+
+/* Espacio adicional entre botones */
+.cta-button + .cta-button {
+    margin-top: 50px; /* Espacio entre los botones */
+}
+
+
+/* Estilos al hacer hover */
+.cta-button:hover {
+    background-color: #2A5FB1;
+    color: white;
+    border: 2px solid black; /* Borde aparece en hover */
+}
+
+/* Botón "Comprar" con color de fondo */
+.comprar {
+    background-color: #ED4F2E;
+    color: #FFF4FA;
+    border-radius: 25px; /* Bordes redondeados */
+}
+
+/* Hover para el botón "Comprar" */
+.comprar:hover  { background-color: #D23C20;
+    border: 2px solid #D23C20; /* Borde en hover */}
+
+    /* Ajustes para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .cta-button {
+        font-size: 14px;
+        width: 70px;
+    }
+
+    .cta-button + .cta-button {
+        margin-top: 0px; /* Menos espacio entre botones */
+    }
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .cta-button {
+        font-size: 12px;
+        width: 100px;
+        padding: 4px 9px; /* Botones más compactos */
+    }
+}
+
+
+
+                      /*    PERSONALIZADO     */
+
+
+ #personalizado {
+    margin-top: 100px; /* Ajusta el valor según el espacio que necesites */
+}
+
+
+#personalizado .cuadrado {
+    margin: 40px auto;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+    padding: 0.1px;
+    background-color: #FFFAF4;
+    border: 0px solid #ccc;
+    transition: background-color 0.3s;
+    max-width: 1000px; /* Limitar ancho del contenedor */
+    height: 300px; /* Dejar que la altura se ajuste automáticamente */
+    border-radius: 25px; /* Bordes redondeados */
+}
+
+#personalizado .cuadrado:hover{
+    background-color: #ED4F2E;
+    border-radius: 25px;
+    color: white;
+}
+
+#personalizado .cuadrado {
+    margin-top: 30px;
+}
+
+
+/* Imagen inicial */
+#personalizado .personalizado-img {
+    width: 500px;
+    height: 370px;
+    margin-left: 550px;
+    transition: transform 0.3s ease; /* Para una transición suave */
+}
+
+
+/* Texto */
+#personalizado .texto {
+    padding-top: 40px; /* Ajusta este valor según lo que necesites */
+    margin: 10px; /* Añadir un margen derecho para separar el texto de la imagen */
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    margin-left: -850px; /* Añade espacio en el lado izquierdo */
+    padding-right: 20px; /* Reduce el padding derecho para ajustar el espacio */
+
+}
+
+
+#personalizado .texto h3 {
+    margin-top: 100px; 
+    font-size: 24px;
+    margin: 0px;
+    padding-left: 40px;
+}
+
+
+#personalizado .texto p {
+    margin-top: 40px; /* Espacio superior */
+    font-size: 14px;
+    padding-right: 360px; /* Espacio solo en el lado izquierdo */
+    padding-left: 40px;
+}
+
+
+/* BOTÓN PERSONALIZAR */ 
+.botón-personalizar {
+    margin-top: 50px; /* Baja el botón */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none; /* Sin borde inicialmente */
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border-radius: 25px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px;
+    display: inline-block;
+    width: 150px; /* Ajusta el ancho del botón según necesites */
+    text-align: center;
+    padding-left: 40px;
+}
+
+/* Estilos al hacer hover */
+.botón-personalizar:hover {
+    background-color: #3361AA; /* Color deseado en hover */
+    color: white;
+    border: 2px solid none; /* Borde aparece en hover */
+}
+
+
+/*POP UP*/
+/* Estilo para la cruz de cierre */
+
+
+/* Estilos existentes del popup */
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Ancho ajustable */
+    height: 70%; /* Alto ajustable */
+    max-width: 800px; /* Ancho máximo */
+    max-height: 600px; /* Alto máximo */
+    background-color: #FFFAF4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 20px;
+    display: none; /* Oculto por defecto */
+}
+
+#popup.active {
+    display: block; /* Mostrar el popup */
+}
+
+#popup h3 {
+    margin: 0 0 20px;
+    font-size: 24px; /* Título más grande */
+    color: #333;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#popup #subtitulo-popup {
+    font-size: 20px; /* Subtítulo más grande */
+    color: #555;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#popup .imagen-cupcake {
+    max-width: 500px; /* Ajusta el ancho de la imagen */
+    height: auto;
+    margin-left: 200px;
+}
+
+#popup .indicador {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px; /* Espacio entre los círculos */
+    height: 450px; /* Ajusta según la altura que necesites */
+    margin-top: -570px;
+    margin-left: 600px;
+}
+
+#popup .indicador::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 38px; /* Grosor de la línea */
+    background-color:#fbacbf; /* Color base de la línea */
+    z-index: -1; /* Para que los círculos queden encima */
+}
+
+#popup .indicador span {
+    width: 100px; /* Tamaño del círculo */
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fbacbf; /* Color base de los círculos */
+    z-index: 1; /* Asegura que los círculos estén encima de la línea */
+}
+
+#popup .indicador .active {
+    background-color: #ED4F2E; /* Color del círculo activo */
+}
+
+#popup .indicador .active + span {
+    background-color: #fbacbf; /* Opcional: Si quieres un efecto en cascada */
+}
+
+#popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: -380px;
+}
+
+#popup ul li {
+    margin-bottom: 10px;
+    font-size: 16px; /* Tamaño de texto ajustable */
+    color: #333;
+}
+
+#popup ul li input[type="radio"] {
+    margin-right: 10px;
+}
+
+#popup .continue-btn {
+    position: fixed;
+    bottom: 20px; /* Fija el botón en la parte inferior */
+    left: 85%; /* Centra el botón horizontalmente */
+    transform: translateX(-50%); /* Ajusta el centrado al 50% de su propio tamaño */
+    z-index: 10000; /* Asegura que el botón esté por encima de todos los elementos */
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#popup .continue-btn[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#popup .continue-btn {
+    background-color: #3361AA; /* Botón continuar */
+    margin-right: 10px;
+}
+
+#popup .continue-btn:hover {
+    background-color: #ff6f61; /* Hover continuar */
+}
+
+/* Botón cerrar */
+
+#popup .cerrar-popup {
+    position: absolute;
+    top: 15px;
+    margin-top: -20px;
+    right: 15px;
+    font-size: 40px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+
+
+/* Media queries para diseño responsivo */
+@media (max-width: 768px) {
+    #popup {
+        width: 90%;
+        height: 70%;
+    }
+
+    #popup h3 {
+        font-size: 20px;
+    }
+
+    #popup #subtitulo-popup {
+        font-size: 16px;
+    }
+
+    #popup .imagen-cupcake {
+        max-width: 120px;
+    }
+
+    #popup .continue-btn, #popup .close-btn {
+        font-size: 14px;
+    }
+}
+
+
+
+
+
+
+                     /*OPCIONES SALUDABLES*/
+
+#opciones-saludables{
+    font-size: 20pt;
+    color: #000000;
+    margin-bottom: 40px; 
+    margin-top: 0px; 
+    margin-left: 260px;
+}
+
+                   /*KETO Y GLUTEN FREE*/
+
+
+#keto .cuadradokg {
+    margin: 40px auto;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 25px;
+    padding: 0.1px;
+    background-color:#fbacbf;;
+    border: 0px solid rgb(251, 172, 191);;
+    transition: background-color 0.3s;
+    max-width: 1000px; /* Limitar ancho del contenedor */
+    height: 300px; /* Dejar que la altura se ajuste automáticamente */
+    border-radius: 25px; /* Bordes redondeados */
+}
+
+
+#keto .keto-img {
+    width: 520px;
+    height: 350px;
+    margin-right: 20px;
+}
+
+.keto-img:hover {
+    transform: scale(1.05); /* Efecto de zoom */
+}
+
+
+/* Texto */
+#keto .cuadradokg .texto  {
+    padding-top: 40px; /* Ajusta este valor según lo que necesites */
+    margin: 10px; /* Añadir un margen derecho para separar el texto de la imagen */
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+}
+
+
+/* Título */
+#keto .cuadradokg .texto h3 {
+    margin-top: 80px; 
+    font-size: 24px;
+    margin: 0px;
+    margin-left: -19px;
+}
+
+/* Párrafo */
+#keto .cuadradokg .texto p {
+    margin-top: 30px; /* Espacio superior */
+    font-size: 14px;
+    padding-right: 60px; /* Espacio solo en el lado izquierdo */
+    margin-left: -19px;
+}
+
+#keto .cuadradokg .buttons {
+    display: flex;
+    gap: 10px; /* Espaciado entre botones */
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+#keto .cuadradokg .buttons .btn {
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px !important; /* Tamaño de fuente más grande */  
+    font-weight: bold;
+}
+
+
+button:hover {
+    background-color: transparent;
+}
+
+
+
+/* Barra indicadora */
+.selector-bar {
+    margin-top: 10px;
+    width: 50%;
+    height: 5px;
+    background-color: transparent; /* Fondo gris */
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden; /* Oculta el desbordamiento */
+}
+
+.selector-bar .indicator {
+    width: 50%; /* Ancho inicial (para el primer botón activo) */
+    height: 100%;
+    background-color: white; /* Color rojo para la barra */
+    transition: width 0.3s ease; /* Transición suave al cambiar */
+    border-radius: 5px;
+}
+
+                           /*FOOTER*/
+
+    /* Estilos generales para el footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFAF4; /* Fondo claro para el footer */
+    color: #FFFAF4; /* Color de texto por defecto */
+    padding: 20px;
+    height: 200px; /* Ajusta la altura según el contenido */
+  }
+  
+  /* Contenedor para los enlaces arriba */
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px; /* Limita el ancho de los enlaces */
+    margin-bottom: 20px; /* Espacio entre los enlaces y la imagen */
+  }
+  
+  /* Estilos para cada enlace */
+  .footer-link {
+    text-decoration: none;
+    color: #000; /* Establece el color negro para el texto */
+    font-size: 16px;
+    margin: 0 15px; /* Espacio entre los enlaces */
+    display: flex;
+    align-items: center; /* Alinea la imagen y el texto */
+    font-weight: 700; /* Hace el texto más negrita */
+  }
+
+/* Redes sociales encima del logo */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Espacio entre las redes sociales y el logo */
+}
+
+.social-link {
+    margin: 0 10px; /* Espaciado entre los íconos */
+    text-decoration: none;
+}
+
+.social-icon {
+    width: 60px; /* Tamaño de los íconos de redes sociales */
+    height: 60px;
+}
+
+/* Ajustes adicionales si necesitas centrar más el contenido */
+.footer-logo img {
+    max-width: 120px;
+    margin-top: 10px;
+}
+
+  
+  .footer-icon {
+    margin-right: 10px; /* Menos espacio entre la imagen y el texto */
+  }
+  
+  /* Estilo para las imágenes dentro de los enlaces */
+  .footer-icon {
+    width: 30px; /* Ajusta el tamaño de las imágenes */
+}
+
+                           /* CAJAS: 3 Y 6 */
+
+       /* CAJA 3*/
+       .box-container {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+      
+      .box-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+       
+/* Estilización general */
+.product-selection {
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+  }
+  
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .product-item {
+    width: 150px;
+    text-align: center;
+  }
+  
+  .counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  button {
+    font-size: 18px;
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #FF451A;
+  }
+  
+  input.quantity {
+    width: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    padding: 5px;
+  }
+  
+/*CARRITO*/
+/* Estilos generales del modal */
+#modal-carrito {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cerrar {
+    font-size: 24px;
+    cursor: pointer;
+    text-align: right;
+    padding: 10px;
+}
+
+#contenido-carrito {
+    overflow-y: auto;
+    flex: 1;
+    padding: 20px;
+}
+
+.producto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.imagen-producto {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.detalles-producto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nombre-producto {
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cantidad-precio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.cantidad {
+    padding: 0 10px;
+}
+
+.btn-cantidad {
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-cantidad:hover {
+    background: #f490a5;
+}
+
+.icono-eliminar {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-top: 1px solid #ccc;
+}
+
+.boton-finalizar {
+    background: black;
+    color: white;
+    width: calc(100% - 40px);
+    margin: 0 auto; /* Centrado horizontal */
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    position: relative;
+}
+
+.boton-finalizar:hover {
+    background: #333;
+}
+
+/* Footer del carrito para posicionar el botón abajo */
+#footer-carrito {
+    padding: 20px;
+    background: white;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* POR AFUERA DEL CARRITO, EL CONTADOR*/
+/* Estilo del contenedor del icono */
+.icon-container {
+    position: relative; /* Necesario para posicionar el contador sobre el icono */
+}
+
+/* Estilo del ícono del carrito */
+.icon {
+    width: 40px;  /* Ajusta el tamaño del carrito según lo necesites */
+    height: 40px;
+}
+
+/* Estilo del contador (número) sobre el carrito */
+.contador-carrito {
+    position: absolute;
+    top: -5px;  /* Ajusta la posición vertical del contador */
+    right: -5px; /* Ajusta la posición horizontal del contador */
+    background-color: #f490a5;  /* Fondo rosa */
+    color: white;  /* Color del número en blanco */
+    font-size: 14px;  /* Tamaño del texto */
+    font-weight: bold;  /* Hacer el texto más grueso */
+    border-radius: 50%;  /* Hacer el fondo redondeado (círculo) */
+    width: 20px;  /* Ancho del círculo */
+    height: 20px;  /* Alto del círculo */
+    display: flex;  /* Usamos Flexbox para centrar el número */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
