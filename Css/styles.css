@@ -1,0 +1,2180 @@
+/* TIPOGRAFÍA */
+body {
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    background-color: #FFFAF4;
+}
+
+/*MENU/*
+
+/* Estilos del header */
+header {
+    background-color: #2A5FB1;
+    /* Fondo azul */
+    padding: 20px 40px;
+    /* Espacio alrededor del contenido */
+    position: fixed;
+    /* Hace que el menú quede fijo */
+    top: 0;
+    /* Fija el menú en la parte superior */
+    left: 0;
+    width: 100%;
+    /* El menú ocupa todo el ancho de la pantalla */
+    z-index: 1000;
+    /* Asegura que el menú esté por encima de otros elementos */
+    display: flex;
+    justify-content: space-between;
+    /* Espacia los elementos entre el lado izquierdo y derecho */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+}
+
+/* Para evitar que el contenido quede oculto debajo del header */
+body {
+    padding-top: 80px;
+    /* Ajusta este valor al alto del header */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo-img {
+    height: 60px;
+    /* Ajusta el tamaño del logo según lo necesites */
+}
+
+/* Contenedor del menú */
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    /* Permite que el menú ocupe el espacio disponible a la izquierda */
+    justify-content: center;
+}
+
+/* Estilos del menú */
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces del menú */
+.menu li a {
+    text-decoration: none;
+    color: #FFFAF4;
+    /* Texto en color claro */
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto de subrayado en hover */
+.menu li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFAF4;
+    /* Subrayado en color claro */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.menu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.menu li a:hover {
+    color: #FFFAF4;
+    /* Mantén el color claro en hover */
+}
+
+
+/* Contenedor de los íconos (carrito y perfil) */
+.icon-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    /* Alinea los íconos a la derecha */
+    position: absolute;
+    /* Fija los íconos en una posición */
+    right: 110px;
+    /* Ajusta este valor para mover los íconos más a la izquierda */
+}
+
+/* Estilos para los íconos en el menú */
+.icon-container a img.icon {
+    width: 24px;
+    /* Tamaño del ícono, puedes ajustarlo según sea necesario */
+    height: auto;
+    /* Mantener la proporción de la imagen */
+    transition: transform 0.3s ease;
+    /* Animación suave para el hover */
+}
+
+/* Efecto al pasar el mouse (hover) sobre los íconos */
+.icon-container a:hover img.icon {
+    transform: scale(2.);
+    /* Aumenta el tamaño del ícono ligeramente */
+}
+
+/* Responsive: IPHONE 11 */
+@media (max-width: 414px) {
+    header {
+        padding: 15px 20px;
+        /* Reducir padding para pantallas más pequeñas */
+        flex-direction: column;
+        /* Mantener la columna para logo y menú */
+        align-items: center;
+        /* Centrar contenido */
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        /* Espacio entre logo y menú */
+    }
+
+    .logo-img {
+        height: 40px;
+        /* Ajustar tamaño del logo */
+        margin-right: 320px;
+    }
+
+    nav {
+        width: 100%;
+        /* Ocupa todo el ancho disponible */
+        justify-content: center;
+        /* Centrar menú */
+    }
+
+    .menu {
+        display: flex;
+        /* Mantener elementos en fila */
+        flex-direction: row;
+        /* Asegurar disposición horizontal */
+        justify-content: center;
+        /* Centrar elementos */
+        list-style: none;
+        gap: 10px;
+        /* Reducir espacio entre enlaces */
+        margin: 0;
+        padding: 0;
+        margin-top: -70px;
+        margin-right: 10px;
+    }
+
+    .menu li a {
+        font-size: 12px;
+        /* Reducir tamaño de fuente para adaptarlo a la pantalla */
+        padding: 5px 8px;
+        /* Ajustar padding para mayor compactación */
+
+    }
+
+    .icon-container {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+        /* Alinea los íconos a la derecha */
+        position: absolute;
+        /* Fija los íconos en una posición */
+        right: 0px;
+        /* Ajusta este valor para mover los íconos más a la izquierda */
+        margin-left: 280px;
+        margin-top: -40px;
+    }
+
+    .icon-container a img.icon {
+        width: 20px;
+        /* Tamaño del ícono, puedes ajustarlo según sea necesario */
+        height: auto;
+        /* Mantener la proporción de la imagen */
+        transition: transform 0.3s ease;
+        /* Animación suave para el hover */
+    }
+}
+
+/*Responsive: TABLETS/IPADS*/
+@media (min-width: 768px) and (max-width: 1024px) {
+    nav {
+        display: flex !important;
+        align-items: center !important;
+        flex-grow: 1 !important;
+        /* Permite que el menú ocupe el espacio disponible a la izquierda */
+        justify-content: center !important;
+    }
+
+    .menu {
+        display: flex !important;
+        /* Mantener elementos en fila */
+        flex-direction: row !important;
+        /* Asegurar disposición horizontal */
+        justify-content: center !important;
+        /* Centrar elementos */
+        list-style: none !important;
+        gap: 10px !important;
+        /* Reducir espacio entre enlaces */
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-top: 0 !important;
+        margin-left: -120px !important;
+    }
+
+    .menu li a {
+        font-size: 14pt !important;
+        /* Reducir tamaño de fuente para adaptarlo a la pantalla */
+        padding: 5px 8px !important;
+        /* Ajustar padding para mayor compactación */
+
+    }
+}
+
+
+
+
+/* VIDEO Y BOTÓN COMPRAR */
+/* Estilos generales para la sección hero */
+#menu {
+    position: relative;
+    width: 100%;
+    height: 815px;
+    /* O ajusta según el tamaño de tu video */
+    overflow: hidden;
+}
+
+/* Contenedor del video */
+#hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilo del video */
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Hace que el video cubra toda la sección */
+}
+
+/* Estilo para el botón overlay */
+.btn-overlay {
+    position: absolute;
+    top: 80%;
+    /* Centra el botón verticalmente */
+    left: 50%;
+    /* Centra el botón horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Ajusta la posición del botón */
+    padding: 15px 30px;
+    font-size: 20px;
+    color: white;
+    /* El color del texto en el botón */
+    background-color: black;
+    /* Fondo negro para el botón */
+    border-radius: 25px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo del botón al hacer hover */
+.btn-overlay:hover {
+    background-color: #fbacbf;
+    /* Color del fondo en hover */
+}
+
+/*Responsive: TABLET/IPADS*/
+@media (max-width: 768px) {
+    #menu {
+        height: 70vh;
+        /* Reduce la altura en pantallas pequeñas */
+    }
+
+    .menu li a {
+        font-size: 12px;
+        /* Reducir tamaño de fuente para adaptarlo a la pantalla */
+        padding: 5px 8px;
+        /* Ajustar padding para mayor compactación */
+    }
+
+    .btn-overlay {
+        font-size: 15pt;
+        /* Reduce el tamaño del texto del botón */
+        padding: 8px 16px;
+        /* Ajusta el tamaño del botón */
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-overlay {
+        font-size: 12px;
+        /* Reduce aún más el tamaño en pantallas pequeñas */
+        padding: 6px 12px;
+    }
+}
+
+/*Responsive: IPHONE 11*/
+@media (max-width: 414px) {
+    #menu {
+        margin-top: -20px;
+    }
+}
+
+
+
+/* SEMANA DEL 8 AL 31 DE OCT*/
+#semanas {
+    width: 100%;
+    max-width: 250px;
+    margin: 40px auto;
+    padding: 10px;
+    background-color: #fbacbf;
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: #333;
+    margin-left: 250px;
+    margin-bottom: 0px;
+}
+
+/* Estilos para el h2 dentro de #semanas */
+#semanas h2 {
+    font-size: 14pt;
+    color: #000000;
+    margin-bottom: 5px;
+    text-align: center;
+    transform: scale(1);
+}
+
+/*Responsive: TABLETS/IPADS */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #semanas {
+        max-width: 300px !important;
+        /* Aumentamos el ancho máximo para tablets */
+        padding: 15px !important;
+        /* Ajustamos el relleno */
+        margin: 30px auto !important;
+        /* Centrado automático horizontal y ajuste del espacio superior */
+        margin-left: 30px !important;
+        /* Eliminamos el desplazamiento hacia la derecha */
+        text-align: left !important;
+        /* Alineación centrada para tablets */
+    }
+
+    #semanas h2 {
+        font-size: 12pt !important;
+        /* Aumentamos ligeramente el tamaño de la fuente */
+        color: #333333 !important;
+        /* Cambiamos a un tono más suave para mejor lectura */
+        margin-bottom: 10px !important;
+        /* Aumentamos el margen inferior */
+        transform: scale(1.1) !important;
+        /* Ampliamos el tamaño del texto ligeramente */
+    }
+}
+
+/*RESPONSIVE: IPHONE 11*/
+@media (max-width: 414px) and (max-height: 896px) {
+    #semanas {
+        max-width: 170px;
+        /* Ajusta el ancho */
+        margin: 20px auto;
+        /* Centrar horizontalmente */
+        padding: 8px;
+        /* Espaciado más cómodo */
+        text-align: right;
+        /* Alinear texto a la derecha */
+        margin-right: 180px;
+        /* Separar del borde derecho */
+    }
+
+    #semanas h2 {
+        font-size: 9pt;
+        /* Tamaño del texto más grande */
+        color: #444;
+        /* Cambiar color si es necesario */
+    }
+}
+
+
+/* NUESTROS BITES */
+#nuestros-bites {
+    font-size: 24pt;
+    /* Tamaño predeterminado */
+    color: #000000;
+    margin-top: 0px;
+    margin-left: 260px;
+}
+
+#nuestros-bites {
+    margin-bottom: 10px;
+    /* Ajusta el valor según el espacio que necesites */
+}
+
+/* Responsive: TABLETS/IPADS */
+/* Responsive para iPad 10th Gen (Vertical) */
+/* Usando min-width */
+@media (min-width: 820px) {
+    #nuestros-bites {
+        font-size: 16pt !important;
+        margin-left: 80px !important;
+        text-align: left !important;
+    }
+}
+
+
+/*RESPONSIVE: IPHONE 11*/
+@media (max-width: 414px) {
+    #nuestros-bites {
+        font-size: 10pt !important;
+        /* Reducir el tamaño de fuente */
+        margin-top: -12px !important;
+        /* Agregar margen superior */
+        margin-right: 180px !important;
+        margin-left: -20px;
+        /* Ajustar margen izquierdo para centrar mejor */
+        text-align: center !important;
+        /* Centrar texto en pantallas pequeñas */
+        white-space: nowrap !important;
+        /* Evita los saltos de línea */
+        overflow: hidden !important;
+        /* Oculta el texto que se salga */
+    }
+}
+
+
+/*     SECCIÓN COMPRAR Y DETALLES    */
+/* Ocultar todos los .slide por defecto */
+.slide {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+/* Ocultar los botones de radio */
+input[type="radio"] {
+    display: none;
+}
+
+/* Mostrar la diapositiva activa según el botón radio seleccionado */
+#sabor1:checked~.slide:nth-of-type(1),
+#sabor2:checked~.slide:nth-of-type(2),
+#sabor3:checked~.slide:nth-of-type(3),
+#sabor4:checked~.slide:nth-of-type(4),
+#sabor5:checked~.slide:nth-of-type(5),
+#sabor6:checked~.slide:nth-of-type(6),
+#sabor7:checked~.slide:nth-of-type(7),
+#sabor8:checked~.slide:nth-of-type(8),
+#sabor9:checked~.slide:nth-of-type(9),
+#sabor10:checked~.slide:nth-of-type(10),
+#sabor11:checked~.slide:nth-of-type(11),
+#sabor12:checked~.slide:nth-of-type(12),
+#sabor13:checked~.slide:nth-of-type(13) {
+    display: block;
+}
+
+/* Flechas de navegación */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 20px;
+}
+
+.left-arrow {
+    left: 10px;
+    /* Posición de la flecha izquierda */
+}
+
+.right-arrow {
+    right: 10px;
+    /* Posición de la flecha derecha */
+}
+
+/* Ajusta el tamaño de las imágenes de flechas */
+.arrow img {
+    width: 20px !important;
+    /* Fuerza el tamaño deseado */
+    height: 30px !important;
+    /* Fuerza el tamaño deseado */
+    max-width: none !important;
+    /* Elimina cualquier restricción de tamaño máximo */
+    max-height: none !important;
+    /* Elimina cualquier restricción de tamaño máximo */
+}
+
+/* Estilo de la diapositiva */
+.content {
+    margin: 40px auto;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    padding: 0.1px;
+    background-color: #FFFAF4;
+    border: 0px solid #ccc;
+    transition: background-color 0.3s;
+    max-width: 1000px;
+    /* Limitar ancho del contenedor */
+    height: 300px;
+    /* Dejar que la altura se ajuste automáticamente */
+    border-radius: 25px;
+    /* Bordes redondeados */
+
+}
+
+.content {
+    margin-bottom: 30px;
+}
+
+.content:hover {
+    background-color: #2A5FB1;
+    border-radius: 25px;
+    color: white;
+}
+
+.content img {
+    width: 500px;
+    height: 350px;
+    margin-right: 20px;
+}
+
+/* Contenedor de texto */
+.text-content {
+    margin-top: 40px;
+    /* Ajusta este valor según lo que necesites */
+}
+
+.text-content h3 {
+    margin-top: 80px;
+    font-size: 24px;
+    margin: 0px;
+}
+
+.text-content p {
+    margin-top: 40px;
+    /* Espacio superior */
+    font-size: 14px;
+    padding-right: 70px;
+    /* Espacio solo en el lado izquierdo */
+}
+
+
+/* Botones de acción */
+.cta-button {
+    margin-top: 40px;
+    /* Baja el botón */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    /* Sin borde inicialmente */
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border-radius: 25px;
+    /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px;
+    display: inline-block;
+    width: 150px;
+    /* Ajusta el ancho del botón según necesites */
+    text-align: center;
+}
+
+/* Espacio adicional entre botones */
+.cta-button+.cta-button {
+    margin-top: 50px;
+    /* Espacio entre los botones */
+}
+
+
+/* Estilos al hacer hover */
+.cta-button:hover {
+    background-color: #2A5FB1;
+    color: white;
+    border: 2px solid black;
+    /* Borde aparece en hover */
+}
+
+/* Botón "Comprar" con color de fondo */
+.comprar {
+    background-color: #ED4F2E;
+    color: #FFF4FA;
+    border-radius: 25px;
+    /* Bordes redondeados */
+}
+
+/* Hover para el botón "Comprar" */
+.comprar:hover {
+    background-color: #D23C20;
+    border: 2px solid #D23C20;
+    /* Borde en hover */
+}
+
+/* Responsive: TABLETS/IPADS */
+@media (max-device-width: 820px) {
+    .arrow {
+        padding: 10px !important;
+        margin-top: -15px !important;
+        transform: scale(0.2) !important;
+        /* Ajusta el tamaño */
+    }
+
+    .left-arrow {
+        margin-left: -100px !important;
+        margin-top: -120px !important;
+    }
+
+    .right-arrow {
+        margin-right: -100px !important;
+        margin-top: -120px !important;
+    }
+
+    .content {
+        flex-direction: column;
+        max-width: 800px !important;
+        height: auto !important;
+        padding: 5px !important;
+        margin-top: 5px !important;
+        margin-left: 50px !important;
+        margin-right: 50px !important;
+        background-color: #2A5FB1 !important;
+    }
+
+    .text-content h3 {
+        font-size: 14pt !important;
+        /* Reducir título */
+        margin-top: -200px !important;
+        margin-left: 250px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .text-content p {
+        font-size: 12pt !important;
+        /* Reducir texto */
+        margin-left: 250px !important;
+        margin-top: 0.01px !important;
+        margin-right: 20px !important;
+    }
+
+    /* Contenedor de los botones */
+    .cta-button-container {
+        display: flex !important;
+        justify-content: flex-end !important;
+        /* Alinea todos los botones a la derecha */
+        gap: 5px !important;
+        /* Reduce el espacio entre los botones */
+        margin-top: 5px !important;
+        /* Subir la caja de botones más arriba */
+        width: 100% !important;
+        /* Asegura que ocupe todo el ancho */
+    }
+
+    /* Estilos generales para los botones */
+    .cta-button {
+        font-size: 15pt !important;
+        padding: 10px 20px !important;
+        /* Ajustar tamaño de los botones */
+        display: inline-block !important;
+        /* Asegura que los botones se muestren uno al lado del otro */
+        margin: 0 !important;
+        /* Elimina márgenes adicionales */
+
+        margin-left: 200px !important;
+    }
+
+    /* Estilo específico para el botón "Comprar" */
+    .cta-button.comprar {
+        color: white !important;
+        margin-left: 100px !important;
+        /* Color de fondo */
+    }
+
+    .cta-button.detalles {
+        padding-left: 50px !important;
+        /* Desplazar el botón "Detalles" más a la derecha */
+        color: white !important;
+        background-color: #2196F3 !important;
+        /* Fondo azul para "Detalles" */
+    }
+
+    .content img {
+        width: 200px !important;
+        height: 200px !important;
+        margin-left: 30px !important;
+        margin-top: 15px !important;
+    }
+}
+
+
+
+/* Responsive:IPHONE 11 */
+@media (max-width: 414px) {
+    .arrow {
+        padding: 10px;
+        /* Reducir tamaño general */
+        margin-top: -15px;
+    }
+
+    .left-arrow {
+        left: -28px;
+        /* Posición de la flecha izquierda */
+    }
+
+    .right-arrow {
+        right: -20px;
+        /* Posición de la flecha derecha */
+    }
+
+    .content {
+        flex-direction: column;
+        max-width: 400px;
+        height: auto;
+        padding: 5px;
+        margin-top: -5px;
+        margin-left: 20px;
+        margin-right: 20px;
+        background-color: #2A5FB1;
+        /* Fondo azul */
+    }
+
+    .text-content h3 {
+        font-size: 12px;
+        /* Reducir título */
+        margin-top: -130px;
+        margin-left: 140px;
+        margin-bottom: 10px;
+    }
+
+    .text-content p {
+        font-size: 9px;
+        /* Reducir texto */
+        margin-left: 140px;
+        margin-top: 0.01px;
+        margin-right: -30px;
+    }
+
+    .buttons-container {
+        display: flex !important;
+        /* Asegura que los botones estén en una sola línea */
+        justify-content: space-between !important;
+        /* Asegura que los botones se distribuyan y no se solapen */
+        gap: 1px !important;
+        /* Espacio entre botones */
+        margin-top: 10px !important;
+        margin-bottom: 0 !important;
+        /* Elimina el espacio abajo del contenedor de los botones */
+        width: 100% !important;
+        /* Asegura que el contenedor ocupe todo el espacio disponible */
+        padding: 0 !important;
+        /* Elimina cualquier padding adicional */
+    }
+
+    .cta-button {
+        display: inline-block !important;
+        white-space: nowrap !important;
+        /* Evita saltos de línea */
+        text-align: center !important;
+        font-size: 12px !important;
+        /* Reducir el tamaño del texto */
+        padding: 3px 15px !important;
+        /* Reducir el padding para achicar el tamaño de los botones */
+        width: auto !important;
+        /* Asegura que los botones no tengan un ancho fijo */
+        max-width: 100px !important;
+        /* Limita aún más el ancho máximo */
+        text-decoration: none !important;
+        margin-bottom: 0 !important;
+        /* Elimina el margen inferior de los botones */
+        margin-left: 0 !important;
+        /* Elimina cualquier margen izquierdo */
+    }
+
+    .cta-button.comprar {
+        position: relative;
+        top: -30px !important;
+        /* Ajusta este valor para moverlo más arriba o más abajo */
+        left: 90px !important;
+        /* Ajusta este valor para moverlo más a la derecha */
+        margin-bottom: 0 !important;
+        /* Elimina el margen inferior del botón "Comprar" */
+    }
+
+    .cta-button {
+        position: relative;
+        left: 5cap !important;
+        /* Ajusta este valor para moverlo más a la izquierda */
+        top: -30px !important;
+        margin-bottom: 0 !important;
+        /* Elimina el margen inferior del botón "Detalles" */
+    }
+
+    .text-content {
+        margin-bottom: 0 !important;
+        /* Asegura que no haya espacio extra debajo de los textos */
+        padding-bottom: 0 !important;
+        /* Elimina cualquier padding extra */
+    }
+
+    /* Eliminar efecto hover */
+    .cta-button:hover,
+    .comprar:hover {
+        background-color: inherit !important;
+        color: inherit !important;
+    }
+
+    .content img {
+        width: 100px;
+        height: 100px;
+        margin-left: 30px;
+        margin-top: 15px;
+    }
+}
+
+/*    PERSONALIZADO     */
+#personalizado {
+    margin-top: 100px;
+    /* Ajusta el valor según el espacio que necesites */
+}
+
+
+#personalizado .cuadrado {
+    margin: 40px auto;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* Alinea los elementos a la izquierda */
+    padding: 0.1px;
+    background-color: #FFFAF4;
+    border: 0px solid #ccc;
+    transition: background-color 0.3s;
+    max-width: 1000px;
+    /* Limitar ancho del contenedor */
+    height: 300px;
+    /* Dejar que la altura se ajuste automáticamente */
+    border-radius: 25px;
+    /* Bordes redondeados */
+}
+
+#personalizado .cuadrado:hover {
+    background-color: #ED4F2E;
+    border-radius: 25px;
+    color: white;
+}
+
+#personalizado .cuadrado {
+    margin-top: 30px;
+}
+
+
+/* Imagen inicial */
+#personalizado .personalizado-img {
+    width: 500px;
+    height: 370px;
+    margin-left: 550px;
+    transition: transform 0.3s ease;
+    /* Para una transición suave */
+}
+
+
+/* Texto */
+#personalizado .texto {
+    padding-top: 40px;
+    /* Ajusta este valor según lo que necesites */
+    margin: 10px;
+    /* Añadir un margen derecho para separar el texto de la imagen */
+    text-align: left;
+    /* Asegura que el texto esté alineado a la izquierda */
+    margin-left: -850px;
+    /* Añade espacio en el lado izquierdo */
+    padding-right: 20px;
+    /* Reduce el padding derecho para ajustar el espacio */
+
+}
+
+
+#personalizado .texto h3 {
+    margin-top: 100px;
+    font-size: 24px;
+    margin: 0px;
+    padding-left: 40px;
+}
+
+
+#personalizado .texto p {
+    margin-top: 40px;
+    /* Espacio superior */
+    font-size: 14px;
+    padding-right: 360px;
+    /* Espacio solo en el lado izquierdo */
+    padding-left: 40px;
+}
+
+
+/* BOTÓN PERSONALIZAR */
+.botón-personalizar {
+    margin-top: 50px;
+    /* Baja el botón */
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    /* Sin borde inicialmente */
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    border-radius: 25px;
+    /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px;
+    display: inline-block;
+    width: 150px;
+    /* Ajusta el ancho del botón según necesites */
+    text-align: center;
+    padding-left: 40px;
+}
+
+/* Estilos al hacer hover */
+.botón-personalizar:hover {
+    background-color: #3361AA;
+    /* Color deseado en hover */
+    color: white;
+    border: 2px solid none;
+    /* Borde aparece en hover */
+}
+
+/*Responsive:IPHONE 11*/
+@media (max-width: 414px) {
+    #personalizado .cuadrado {
+        flex-direction: column !important;
+        /* Cambiar a disposición en columna */
+        padding: 10px !important;
+        /* Reducir padding interno */
+        margin-top: -70px !important;
+        max-width: 400px !important;
+        /* Limitar ancho del contenedor */
+        height: auto !important;
+        /* Dejar que la altura se ajuste automáticamente */
+        margin-left: 20px !important;
+        background-color: #ED4F2E !important;
+        /* Color de fondo fijo */
+        margin-right: 20px !important;
+    }
+
+    #personalizado .personalizado-img {
+        width: 100px !important;
+        height: 100px !important;
+        /* Imagen ocupa todo el ancho */
+        margin-bottom: 20px !important;
+        /* Espacio entre imagen y texto */
+        margin-left: 200px !important;
+    }
+
+    #personalizado .texto {
+        padding: 10px !important;
+        /* Reducir padding */
+        text-align: left !important;
+        /* Centrar texto */
+        margin-left: 1px !important;
+        margin-top: -10px !important;
+        margin-right: 40px !important;
+    }
+
+    #personalizado .texto h3 {
+        font-size: 12px !important;
+        /* Reducir tamaño del texto */
+        margin-top: -110px !important;
+        /* Ajustar margen superior */
+        margin-right: 40px !important;
+        /* Ajustar margen derecho */
+        margin-left: -20px !important;
+        /* Ajustar margen izquierdo */
+        white-space: nowrap !important;
+        /* Evita que el texto se divida en varias líneas */
+        overflow: hidden !important;
+        /* Esconde cualquier texto que sobrepase el contenedor */
+    }
+
+    #personalizado .texto p {
+        font-size: 9px !important;
+        /* Reducir tamaño de texto */
+        margin-top: 5px !important;
+        /* Reducir espacio superior */
+        margin-left: -20px !important;
+        margin-right: -260px !important;
+    }
+
+    .botón-personalizar {
+        font-size: 12px !important;
+        /* Reducir tamaño del botón */
+        padding: 3px 15px !important;
+        /* Reducir padding */
+        margin-bottom: -100px !important;
+        background-color: #3361AA;
+        /* Color deseado en hover */
+        color: white;
+        border: 2px solid none;
+        /* Borde aparece en hover */
+    }
+}
+
+/* Responsive: TABLETS (768x1024) */
+@media ((max-device-width: 820px)) {
+    #personalizado .cuadrado {
+        flex-direction: column !important;
+        padding: 15px !important;
+        /* Ajustar padding */
+        margin-top: -40px !important;
+        /* Ajustar margen superior */
+        max-width: 800px !important;
+        /* Limitar ancho del contenedor */
+        height: 250px !important;
+        /* Dejar que la altura se ajuste automáticamente */
+        margin-left: 50px !important;
+        margin-right: 50px !important;
+        background-color: #ED4F2E !important;
+    }
+
+    #personalizado .personalizado-img {
+        width: 250px !important;
+        /* Ajustar tamaño de imagen */
+        height: 250px !important;
+        /* Ajustar tamaño de imagen */
+        margin-bottom: 20px !important;
+        margin-left: 490px !important;
+        margin-right: auto !important;
+        /* Centrar imagen */
+    }
+
+    #personalizado .texto {
+        padding: 15px !important;
+        /* Ajustar padding */
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-top: -50px !important;
+        margin-right: 90px !important;
+    }
+
+    #personalizado .texto h3 {
+        font-size: 14pt !important;
+        /* Ajustar tamaño del texto */
+        margin-top: -200px !important;
+        /* Ajustar margen superior */
+        margin-right: 10px !important;
+        /* Ajustar margen derecho */
+        margin-left: 0 !important;
+        /* Ajustar margen izquierdo */
+        white-space: normal !important;
+        /* Permitir que el texto se divida en varias líneas */
+        overflow: visible !important;
+        /* Mostrar todo el texto */
+    }
+
+    #personalizado .texto p {
+        font-size: 12pt !important;
+        /* Ajustar tamaño de texto */
+        margin-top: 10px !important;
+        /* Ajustar margen superior */
+        margin-left: 0 !important;
+        margin-right: -220px !important;
+    }
+
+    .botón-personalizar {
+        font-size: 15pt !important;
+        /* Reducir tamaño del texto */
+        padding: 3px 15px !important;
+        /* Reducir el padding */
+        margin-bottom: -100px !important;
+        width: auto !important;
+        /* Asegura que el botón no tenga un ancho fijo */
+        max-width: 120px !important;
+        /* Limita el ancho máximo del botón a 80px */
+        text-decoration: none !important;
+        /* Elimina el subrayado */
+        margin-left: 30px !important;
+        /* Elimina el margen izquierdo */
+        margin-right: 0 !important;
+        /* Elimina el margen derecho */
+    }
+}
+
+
+/*POP UP: Apretando B. Personalizar en la página*/
+/* Estilo para la cruz de cierre */
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    /* Ancho ajustable */
+    height: 70%;
+    /* Alto ajustable */
+    max-width: 800px !important;
+    /* Ancho máximo */
+    max-height: 600px !important;
+    /* Alto máximo */
+    background-color: #FFFAF4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 20px;
+    display: none;
+    /* Oculto por defecto */
+}
+
+#popup.active {
+    display: block;
+    /* Mostrar el popup */
+}
+
+#popup h3 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    /* Título más grande */
+    color: #333;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#popup #subtitulo-popup {
+    font-size: 20px;
+    /* Subtítulo más grande */
+    color: #555;
+    text-align: left;
+    margin-left: 20px;
+}
+
+#popup .imagen-cupcake {
+    max-width: 500px;
+    /* Ajusta el ancho de la imagen */
+    height: auto;
+    margin-left: 200px;
+}
+
+#popup .indicador {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    /* Espacio entre los círculos */
+    height: 450px;
+    /* Ajusta según la altura que necesites */
+    margin-top: -570px;
+    margin-left: 600px;
+}
+
+#popup .indicador::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 38px;
+    /* Grosor de la línea */
+    background-color: #fbacbf;
+    /* Color base de la línea */
+    z-index: -1;
+    /* Para que los círculos queden encima */
+}
+
+#popup .indicador span {
+    width: 100px;
+    /* Tamaño del círculo */
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fbacbf;
+    /* Color base de los círculos */
+    z-index: 1;
+    /* Asegura que los círculos estén encima de la línea */
+}
+
+#popup .indicador .active {
+    background-color: #ED4F2E;
+    /* Color del círculo activo */
+}
+
+#popup .indicador .active+span {
+    background-color: #fbacbf;
+    /* Opcional: Si quieres un efecto en cascada */
+}
+
+#popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: -380px;
+}
+
+#popup ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    /* Tamaño de texto ajustable */
+    color: #333;
+}
+
+#popup ul li input[type="radio"] {
+    margin-right: 10px;
+}
+
+#popup .continue-btn {
+    position: fixed;
+    bottom: 20px;
+    /* Fija el botón en la parte inferior */
+    left: 85%;
+    /* Centra el botón horizontalmente */
+    transform: translateX(-50%);
+    /* Ajusta el centrado al 50% de su propio tamaño */
+    z-index: 10000;
+    /* Asegura que el botón esté por encima de todos los elementos */
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#popup .continue-btn[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#popup .continue-btn {
+    background-color: #3361AA;
+    /* Botón continuar */
+    margin-right: 10px;
+}
+
+#popup .continue-btn:hover {
+    background-color: #ff6f61;
+    /* Hover continuar */
+}
+
+/* Botón cerrar */
+
+#popup .cerrar-popup {
+    position: absolute;
+    top: 15px;
+    margin-top: -20px;
+    right: 15px;
+    font-size: 40px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/*Responsive: IPHONE 11*/
+@media (max-width: 414px) {
+    #popup {
+        width: 80% !important;
+        height: auto !important;
+        padding: 10px !important;
+    }
+
+    #popup h3 {
+        font-size: 12px !important;
+        margin-left: 10px !important;
+        margin-top: 80px !important;
+    }
+
+    #popup #subtitulo-popup {
+        font-size: 10px !important;
+        margin-left: 10px !important;
+        margin-top: 20px !important;
+    }
+
+    #popup .imagen-cupcake {
+        max-width: 250px !important;
+        height: auto !important;
+        margin-left: 115px !important;
+    }
+
+    /* Estilo de la línea */
+    #popup .indicador {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-top: 770px !important;
+        /* Bajar el indicador aún más */
+        margin-left: 300px !important;
+        height: 500px !important;
+        gap: 100px !important;
+    }
+
+    /* Estilo de la línea que está debajo de los círculos */
+    #popup .indicador::before {
+        content: '' !important;
+        position: absolute !important;
+        top: 200px !important;
+        /* Baja la línea más abajo */
+        bottom: 0 !important;
+        width: 20px !important;
+        background-color: #fbacbf !important;
+        z-index: -1 !important;
+    }
+
+    /* Círculos */
+    #popup .indicador span {
+        width: 50px !important;
+        height: 50px !important;
+        border-radius: 50% !important;
+        background-color: #fbacbf !important;
+        position: relative !important;
+        top: 160px !important;
+        /* Usar top para mover los círculos hacia abajo */
+        z-index: 1 !important;
+    }
+
+    #popup ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        margin-top: -280px !important;
+    }
+
+    #popup ul li {
+        font-size: 10px !important;
+    }
+
+    #popup .continue-btn {
+        font-size: 15px !important;
+        padding: 8px 16px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        margin-left: 115px !important;
+    }
+
+    #popup .cerrar-popup {
+        font-size: 30px !important;
+    }
+
+    /* Estilo del círculo activo */
+    #popup .indicador .active {
+        background-color: #ED4F2E !important;
+        /* Color del círculo activo */
+    }
+
+    /* Estilo de los círculos no activos */
+    #popup .indicador .active+span {
+        background-color: #fbacbf !important;
+        /* Opcional: Si quieres un efecto en cascada */
+    }
+}
+
+/*Responsive: TABLETS/IPADS*/
+@media (max-device-width: 820px) {
+    #popup {
+        width: 90% !important;
+        height: 90% !important;
+        max-width: 1700px !important;
+        max-height: 650px !important;
+    }
+
+    #popup h3 {
+        font-size: 15pt !important;
+    }
+
+    #popup #subtitulo-popup {
+        font-size: 14px !important;
+    }
+
+    #popup .imagen-cupcake {
+        max-width: 420px;
+    }
+
+    /*LÍNEA*/
+    #popup .indicador {
+        margin-top: -450px !important;
+        /* Ajustar la posición de la indicación */
+    }
+
+    #popup .continue-btn,
+    #popup .close-btn {
+        font-size: 15pt;
+    }
+}
+
+
+/*OPCIONES SALUDABLES*/
+
+#opciones-saludables {
+    font-size: 20pt;
+    color: #000000;
+    margin-bottom: 40px;
+    margin-top: 0px;
+    margin-left: 260px;
+}
+
+
+/* Responsive: IPHONE 11 */
+@media (max-width: 414px) {
+    #opciones-saludables {
+        font-size: 15px !important;
+        /* Usar px en lugar de pt */
+        color: #000000 !important;
+        margin-bottom: 20px !important;
+        margin-top: -30px !important;
+        margin-left: -150px !important;
+        text-align: center !important;
+    }
+
+    /* Asegurando que el h3 dentro de #opciones-saludables también tenga el tamaño ajustado */
+    #opciones-saludables h3 {
+        font-size: 15px !important;
+    }
+}
+
+
+
+/*Responsive: TABLETS/IPADS*/
+@media (max-device-width: 820px) {
+    #opciones-saludables {
+        font-size: 16pt !important;
+        /* Reduce el tamaño de la fuente */
+        color: #000000;
+        /* Conserva el color */
+        margin-bottom: 20px;
+        /* Ajusta el margen inferior */
+        margin-top: -20px;
+        /* Ajusta el margen superior */
+        margin-left: -500px;
+        /* Reduce el margen izquierdo */
+        text-align: center;
+        /* Centra el texto horizontalmente */
+    }
+}
+
+/*KETO Y GLUTEN FREE*/
+#keto .cuadradokg {
+    margin: 40px auto;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 25px;
+    padding: 0.1px;
+    background-color: #fbacbf;
+    ;
+    border: 0px solid rgb(251, 172, 191);
+    ;
+    transition: background-color 0.3s;
+    max-width: 1000px;
+    /* Limitar ancho del contenedor */
+    height: 300px;
+    /* Dejar que la altura se ajuste automáticamente */
+    border-radius: 25px;
+    /* Bordes redondeados */
+}
+
+
+#keto .keto-img {
+    width: 520px;
+    height: 350px;
+    margin-right: 20px;
+}
+
+.keto-img:hover {
+    transform: scale(1.05);
+    /* Efecto de zoom */
+}
+
+
+/* Texto */
+#keto .cuadradokg .texto {
+    padding-top: 40px;
+    /* Ajusta este valor según lo que necesites */
+    margin: 10px;
+    /* Añadir un margen derecho para separar el texto de la imagen */
+    text-align: left;
+    /* Asegura que el texto esté alineado a la izquierda */
+}
+
+
+/* Título */
+#keto .cuadradokg .texto h3 {
+    margin-top: 80px;
+    font-size: 24px;
+    margin: 0px;
+    margin-left: -19px;
+}
+
+/* Párrafo */
+#keto .cuadradokg .texto p {
+    margin-top: 30px;
+    /* Espacio superior */
+    font-size: 14px;
+    padding-right: 60px;
+    /* Espacio solo en el lado izquierdo */
+    margin-left: -19px;
+}
+
+#keto .cuadradokg .buttons {
+    display: flex;
+    gap: 10px;
+    /* Espaciado entre botones */
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+#keto .cuadradokg .buttons .btn {
+    background-color: transparent;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px !important;
+    /* Tamaño de fuente más grande */
+    font-weight: bold;
+}
+
+
+button:hover {
+    background-color: transparent;
+}
+
+/* Barra indicadora */
+.selector-bar {
+    margin-top: 10px;
+    width: 50%;
+    height: 5px;
+    background-color: transparent;
+    /* Fondo gris */
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    /* Oculta el desbordamiento */
+}
+
+.selector-bar .indicator {
+    width: 50%;
+    /* Ancho inicial (para el primer botón activo) */
+    height: 100%;
+    background-color: white;
+    /* Color rojo para la barra */
+    transition: width 0.3s ease;
+    /* Transición suave al cambiar */
+    border-radius: 5px;
+}
+
+/*Responsive: IPHONE 11*/
+@media (max-width: 414px) {
+    #keto .cuadradokg {
+        flex-direction: column !important;
+        /* Cambiar a disposición en columna */
+        padding: 10px !important;
+        /* Reducir padding interno */
+        height: auto !important;
+        /* Dejar que la altura se ajuste automáticamente */
+        max-width: 400px !important;
+        /* Limitar ancho del contenedor al 100% */
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+        margin-top: -10px !important;
+    }
+
+    #keto .keto-img {
+        width: 100px !important;
+        /* Imagen ocupa todo el ancho */
+        height: 100px !important;
+        /* Mantener proporciones */
+        margin: 0 !important;
+        /* Quitar márgenes */
+        margin-left: 22px !important;
+    }
+
+    #keto .cuadradokg .texto {
+        padding: 10px !important;
+        /* Reducir padding */
+        margin: 5px !important;
+        /* Ajustar márgenes */
+        text-align: center !important;
+        /* Centrar texto */
+    }
+
+    #keto .cuadradokg .texto h3 {
+        font-size: 12px !important;
+        /* Reducir tamaño del título */
+        margin-top: -100px !important;
+        /* Ajustar margen superior */
+        position: relative !important;
+        /* Establecer posición relativa */
+        left: 40px !important;
+        /* Mover el texto 20px a la derecha */
+    }
+
+    /* Mover el título de Gluten Free cuando esté activo */
+    #btnGlutenFree.active+.texto #title {
+        margin-left: 50px !important;
+        /* Ajusta el valor según lo necesites */
+    }
+
+    #keto .cuadradokg .texto p {
+        font-size: 9px !important;
+        /* Reducir tamaño de texto */
+        margin-top: 10px !important;
+        /* Ajustar margen superior */
+        margin-left: 120px !important;
+        margin-right: -50px !important;
+        text-align: left !important;
+        /* Centra el texto horizontalmente */
+    }
+
+    #keto .cuadradokg .buttons {
+        flex-direction: center !important;
+        /* Cambiar a disposición en columna */
+    }
+
+    #keto .cuadradokg .buttons button#btnKeto,
+    #keto .cuadradokg .buttons button#btnGlutenFree {
+        font-size: 15px !important;
+        padding: 1px 10px !important;
+    }
+}
+
+/*Responsive: TABLETS / IPADS*/
+@media (max-device-width: 820px) {
+    #keto .cuadradokg {
+        flex-direction: column;
+        /* Cambiar a disposición en columna */
+        padding: 10px;
+        /* Reducir padding interno */
+        height: auto;
+        /* Dejar que la altura se ajuste automáticamente */
+        max-width: 800px !important;
+        /* Limitar ancho del contenedor al 100% */
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: -10px;
+    }
+
+    #keto .keto-img {
+        width: 250px;
+        /* Imagen ocupa todo el ancho */
+        height: 250px;
+        /* Mantener proporciones */
+        margin: 0;
+        /* Quitar márgenes */
+    }
+
+    #keto .cuadradokg .texto {
+        padding: 10px;
+        /* Reducir padding */
+        margin: 5px;
+        /* Ajustar márgenes */
+        text-align: center;
+        /* Centrar texto */
+    }
+
+    #keto .cuadradokg .texto h3 {
+        font-size: 14pt;
+        /* Reducir tamaño del título */
+        margin-top: -200px;
+        /* Ajustar margen superior */
+        margin-left: -250px !important;
+    }
+
+    #keto .cuadradokg .texto p {
+        font-size: 12pt;
+        /* Reducir tamaño de texto */
+        margin-top: 10px;
+        /* Ajustar margen superior */
+        margin-left: 230px;
+        margin-right: -50px;
+        text-align: left;
+        /* Centra el texto horizontalmente */
+    }
+
+    #keto .cuadradokg .buttons {
+        flex-direction: center;
+        /* Cambiar a disposición en columna */
+    }
+
+    #keto .cuadradokg .buttons .btn {
+        font-size: 15pt !important;
+        /* Reducir tamaño de fuente de los botones */
+        padding: 8px 16px;
+        /* Ajustar padding */
+
+    }
+
+    #keto .cuadradokg .buttons {
+        display: flex !important;
+        justify-content: flex-end !important;
+        /* Mueve los botones a la derecha */
+        margin-right: 320px !important;
+        /* Ajusta la distancia desde la derecha */
+    }
+
+    #keto .cuadradokg .selector-bar {
+        display: flex !important;
+        justify-content: flex-end !important;
+        /* Mueve la barra a la derecha */
+        margin-right: 120px !important;
+    }
+
+    .indicator {
+        transition: 0.3s ease-in-out;
+        /* Para una animación suave si se mueve */
+    }
+
+}
+
+
+
+/*FOOTER*/
+
+/* Estilos generales para el footer */
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFAF4;
+    /* Fondo claro para el footer */
+    color: #FFFAF4;
+    /* Color de texto por defecto */
+    padding: 20px;
+    height: 200px;
+    /* Ajusta la altura según el contenido */
+}
+
+/* Contenedor para los enlaces arriba */
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    /* Limita el ancho de los enlaces */
+    margin-bottom: 20px;
+    /* Espacio entre los enlaces y la imagen */
+}
+
+/* Estilos para cada enlace */
+.footer-link {
+    text-decoration: none;
+    color: #000;
+    /* Establece el color negro para el texto */
+    font-size: 16px;
+    margin: 0 15px;
+    /* Espacio entre los enlaces */
+    display: flex;
+    align-items: center;
+    /* Alinea la imagen y el texto */
+    font-weight: 700;
+    /* Hace el texto más negrita */
+}
+
+/* Redes sociales encima del logo */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    /* Espacio entre las redes sociales y el logo */
+}
+
+.social-link {
+    margin: 0 10px;
+    /* Espaciado entre los íconos */
+    text-decoration: none;
+}
+
+.social-icon {
+    width: 60px;
+    /* Tamaño de los íconos de redes sociales */
+    height: 60px;
+}
+
+/* Ajustes adicionales si necesitas centrar más el contenido */
+.footer-logo img {
+    max-width: 120px;
+    margin-top: 10px;
+}
+
+
+.footer-icon {
+    margin-right: 10px;
+    /* Menos espacio entre la imagen y el texto */
+}
+
+/* Estilo para las imágenes dentro de los enlaces */
+.footer-icon {
+    width: 30px;
+    /* Ajusta el tamaño de las imágenes */
+}
+
+/*Responsive: IPHONE 11*/
+@media (max-width: 414px) {
+    .footer {
+        padding: 10px !important;
+        /* Reducir el padding */
+        height: auto !important;
+        /* Permitir que la altura se ajuste automáticamente */
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+
+    /* Contenedor para los enlaces arriba */
+    .footer-links {
+        display: flex !important;
+        justify-content: space-between !important;
+        margin-bottom: 20px !important;
+        margin-left: 0 !important;
+        /* Reajustar margen a la izquierda */
+        margin-right: -100px !important;
+        /* Empujar el contenedor hacia la derecha */
+        font-size: 9px !important;
+        text-align: center !important;
+    }
+
+
+    .footer-link {
+        font-size: 9px !important;
+        /* Reducir tamaño de fuente */
+        text-align: center !important;
+        /* Centrar texto */
+        margin-top: -30px !important;
+    }
+
+    .footer-link .footer-icon {
+        max-width: 20px !important;
+        height: auto !important;
+    }
+
+
+    .footer-social {
+        display: flex !important;
+        justify-content: space-between !important;
+        margin-bottom: 5px !important;
+        /* Ajustar el espacio */
+    }
+
+    .social-icon {
+        width: 30px !important;
+        /* Reducir tamaño de íconos */
+        height: 30px !important;
+        /* Reducir tamaño de íconos */
+    }
+
+    .footer-logo img {
+        max-width: 40px !important;
+        /* Ajustar tamaño del logo */
+    }
+}
+
+/*Responsive: TABLETS / IPADS*/
+@media (max-device-width: 820px) {
+    .footer {
+        padding: 10px;
+        /* Reducir el padding */
+        height: auto;
+        /* Permitir que la altura se ajuste automáticamente */
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    /* Contenedor para los enlaces arriba */
+    .footer-links {
+        display: flex;
+        justify-content: space-between;
+        max-width: 50px !important;
+        /* Limita el ancho de los enlaces */
+        margin-bottom: 20px;
+        /* Espacio entre los enlaces y la imagen */
+        margin-left: -350px !important;
+        /* Reducir tamaño de fuente */
+        text-align: center;
+        /* Centrar texto */
+    }
+
+    .footer-link {
+        font-size: 14pt;
+        /* Reducir tamaño de fuente */
+        text-align: center;
+        /* Centrar texto */
+        margin-top: -30px;
+    }
+
+    .footer-link .footer-icon {
+        max-width: 20px;
+        height: auto;
+    }
+
+
+    .footer-social {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        /* Ajustar el espacio */
+    }
+
+    .social-icon {
+        width: 50px;
+        /* Reducir tamaño de íconos */
+        height: 50px;
+        /* Reducir tamaño de íconos */
+    }
+
+    .footer-logo img {
+        max-width: 100px;
+        /* Ajustar tamaño del logo */
+    }
+}
+
+/* CAJAS: 3 Y 6 */
+
+/* CAJA 3*/
+.box-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.box-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilización general */
+.product-selection {
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.product-item {
+    width: 150px;
+    text-align: center;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+button {
+    font-size: 18px;
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF451A;
+}
+
+input.quantity {
+    width: 40px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+/*CARRITO*/
+/* Estilos generales del modal */
+#modal-carrito {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cerrar {
+    font-size: 24px;
+    cursor: pointer;
+    text-align: right;
+    padding: 10px;
+}
+
+#contenido-carrito {
+    overflow-y: auto;
+    flex: 1;
+    padding: 20px;
+}
+
+.producto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.imagen-producto {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.detalles-producto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nombre-producto {
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cantidad-precio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.cantidad {
+    padding: 0 10px;
+}
+
+.btn-cantidad {
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-cantidad:hover {
+    background: #f490a5;
+}
+
+.icono-eliminar {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-top: 1px solid #ccc;
+}
+
+.boton-finalizar {
+    background: black;
+    color: white;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    /* Centrado horizontal */
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    position: relative;
+}
+
+.boton-finalizar:hover {
+    background: #333;
+}
+
+/* Footer del carrito para posicionar el botón abajo */
+#footer-carrito {
+    padding: 20px;
+    background: white;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* POR AFUERA DEL CARRITO, EL CONTADOR*/
+/* Estilo del contenedor del icono */
+.icon-container {
+    position: relative;
+    /* Necesario para posicionar el contador sobre el icono */
+}
+
+/* Estilo del ícono del carrito */
+.icon {
+    width: 40px;
+    /* Ajusta el tamaño del carrito según lo necesites */
+    height: 40px;
+}
+
+/* Estilo del contador (número) sobre el carrito */
+.contador-carrito {
+    position: absolute;
+    top: -5px;
+    /* Ajusta la posición vertical del contador */
+    right: -5px;
+    /* Ajusta la posición horizontal del contador */
+    background-color: #f490a5;
+    /* Fondo rosa */
+    color: white;
+    /* Color del número en blanco */
+    font-size: 14px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Hacer el texto más grueso */
+    border-radius: 50%;
+    /* Hacer el fondo redondeado (círculo) */
+    width: 20px;
+    /* Ancho del círculo */
+    height: 20px;
+    /* Alto del círculo */
+    display: flex;
+    /* Usamos Flexbox para centrar el número */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
