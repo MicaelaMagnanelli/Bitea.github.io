@@ -1,0 +1,1462 @@
+/* TIPOGRAFÍA */
+body {
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    background-image: url('Imagenes/Fondo.png');
+    /* Imagen de fondo */
+    background-size: auto;
+    /* Para que se repita correctamente */
+    background-position: center;
+    background-repeat: repeat;
+    /* Repetición del fondo */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*MENU/*
+
+/* Estilos del header */
+header {
+    background-color: #2A5FB1;
+    /* Fondo azul */
+    padding: 20px 40px;
+    /* Espacio alrededor del contenido */
+    position: fixed;
+    /* Hace que el menú quede fijo */
+    top: 0;
+    /* Fija el menú en la parte superior */
+    left: 0;
+    width: 100%;
+    /* El menú ocupa todo el ancho de la pantalla */
+    z-index: 1000;
+    /* Asegura que el menú esté por encima de otros elementos */
+    display: flex;
+    justify-content: space-between;
+    /* Espacia los elementos entre el lado izquierdo y derecho */
+    align-items: center;
+    /* Centra los elementos verticalmente */
+}
+
+/* Para evitar que el contenido quede oculto debajo del header */
+body {
+    padding-top: 80px;
+    /* Ajusta este valor al alto del header */
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.logo-img {
+    height: 60px;
+    /* Ajusta el tamaño del logo según lo necesites */
+}
+
+/* Contenedor del menú */
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    /* Permite que el menú ocupe el espacio disponible a la izquierda */
+    justify-content: center;
+}
+
+/* Estilos del menú */
+.menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Enlaces del menú */
+.menu li a {
+    text-decoration: none;
+    color: #FFFAF4;
+    /* Texto en color claro */
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+/* Efecto de subrayado en hover */
+.menu li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 3px;
+    background-color: #FFFAF4;
+    /* Subrayado en color claro */
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.menu li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.menu li a:hover {
+    color: #FFFAF4;
+    /* Mantén el color claro en hover */
+}
+
+
+/* Contenedor de los íconos (carrito y perfil) */
+.icon-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    /* Alinea los íconos a la derecha */
+    position: absolute;
+    /* Fija los íconos en una posición */
+    right: 110px;
+    /* Ajusta este valor para mover los íconos más a la izquierda */
+}
+
+/* Estilos para los íconos en el menú */
+.icon-container a img.icon {
+    width: 24px;
+    /* Tamaño del ícono, puedes ajustarlo según sea necesario */
+    height: auto;
+    /* Mantener la proporción de la imagen */
+    transition: transform 0.3s ease;
+    /* Animación suave para el hover */
+}
+
+/* Efecto al pasar el mouse (hover) sobre los íconos */
+.icon-container a:hover img.icon {
+    transform: scale(2.);
+    /* Aumenta el tamaño del ícono ligeramente */
+}
+
+/* Estilos para el ícono de hamburguesa (oculto por defecto en escritorio) */
+.hamburger {
+    display: none;
+    /* Aseguramos que esté oculto en pantallas grandes */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: #FFFAF4;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+
+
+/*BASE DE LA PAGINA*/
+
+/* Contenedor del formulario */
+.form-container {
+    background-color: #FFFAF4;
+    /* Fondo blanco */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra */
+    max-width: 400px;
+    width: 100%;
+    max-height: 600px;
+    margin: auto;
+    text-align: center;
+    /* Centra el contenido */
+}
+
+/* Imagen (logo) */
+.small-image {
+    max-width: 60px;
+    /* Tamaño máximo */
+    max-height: auto;
+    margin-bottom: 20px;
+    /* Espacio entre la imagen y el título */
+}
+
+.form-container h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    color: #333;
+}
+
+form label {
+    color: #333;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    font-weight: normal !important;
+    /* Elimina la negrita */
+    text-align: left;
+    /* Alinea las etiquetas a la izquierda */
+    display: block;
+    /* Asegura que las etiquetas estén en su propia línea */
+}
+
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #E36A2E;
+    /* Color similar al botón de tu ejemplo */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: -10px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #D15C28;
+}
+
+form p {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Estilo para el enlace "Iniciar sesión" */
+.login-link {
+    color: black;
+    /* Color similar al botón */
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+/*POP UP: personalizar*/
+/* Estilos existentes del popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    /* Ancho ajustable */
+    height: 70%;
+    /* Alto ajustable */
+    max-width: 800px;
+    /* Ancho máximo */
+    max-height: 600px;
+    /* Alto máximo */
+    background-color: #FFFAF4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    padding: 20px;
+    display: none;
+    /* Oculto por defecto */
+}
+
+.popup.active {
+    display: block;
+    /* Mostrar el popup */
+}
+
+.popup h3 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    /* Título más grande */
+    color: #333;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.popup #subtitulo-popup {
+    font-size: 20px;
+    /* Subtítulo más grande */
+    color: #555;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.popup .imagen-cupcake {
+    max-width: 500px;
+    /* Ajusta el ancho de la imagen */
+    height: auto;
+    margin-left: 200px;
+}
+
+.popup .indicador {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    /* Espacio entre los círculos */
+    height: 450px;
+    /* Ajusta según la altura que necesites */
+    margin-top: -570px;
+    margin-left: 600px;
+}
+
+.popup .indicador::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 38px;
+    /* Grosor de la línea */
+    background-color: #fbacbf;
+    /* Color base de la línea */
+    z-index: -1;
+    /* Para que los círculos queden encima */
+}
+
+.popup .indicador span {
+    width: 100px;
+    /* Tamaño del círculo */
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fbacbf;
+    /* Color base de los círculos */
+    z-index: 1;
+    /* Asegura que los círculos estén encima de la línea */
+}
+
+.popup .indicador .active {
+    background-color: #ED4F2E;
+    /* Color del círculo activo */
+}
+
+.popup .indicador .active+span {
+    background-color: #fbacbf;
+    /* Opcional: Si quieres un efecto en cascada */
+}
+
+.popup ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: -380px;
+}
+
+.popup ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    /* Tamaño de texto ajustable */
+    color: #333;
+}
+
+.popup ul li input[type="radio"] {
+    margin-right: 10px;
+}
+
+.popup .continue-btn {
+    position: fixed;
+    bottom: 20px;
+    /* Fija el botón en la parte inferior */
+    left: 85%;
+    /* Centra el botón horizontalmente */
+    transform: translateX(-50%);
+    /* Ajusta el centrado al 50% de su propio tamaño */
+    z-index: 10000;
+    /* Asegura que el botón esté por encima de todos los elementos */
+    padding: 10px 20px;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.popup .continue-btn[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.popup .continue-btn {
+    background-color: #3361AA;
+    /* Botón continuar */
+    margin-right: 10px;
+}
+
+.popup .continue-btn:hover {
+    background-color: #ff6f61;
+    /* Hover continuar */
+}
+
+/* Botón cerrar */
+
+.popup .cerrar-popup {
+    position: absolute;
+    top: 15px;
+    margin-top: -20px;
+    right: 15px;
+    font-size: 40px;
+    color: #333;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.popup {
+    display: none;
+    /* Oculta el pop-up por defecto */
+}
+
+.popup.active {
+    display: block;
+    /* Muestra el pop-up cuando tiene la clase 'active' */
+}
+
+
+
+
+
+/* POP UP DE INICIO DE SESIÓN */
+.popup-login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-login.hidden {
+    display: none;
+}
+
+.popup-content {
+    background-color: #fffaf4;
+    border-radius: 8px;
+    padding: 20px;
+    width: 1000px;
+    /* Aumentamos el ancho del pop-up */
+    height: 600px;
+    /* Aumentamos la altura del pop-up */
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-image {
+    margin-left: 469px;
+    /* Espacio entre la imagen y el formulario */
+}
+
+.popup-image img {
+    margin-top: -74px;
+    max-width: 550px;
+    /* Ajusta el tamaño de la imagen */
+    height: 629px;
+    border-radius: 8px;
+    /* Opcional: bordes redondeados */
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Estilo específico para el h2 dentro del pop-up de inicio de sesión */
+#popup-login .popup-content h2 {
+    text-align: left !important;
+    margin-bottom: 0px !important;
+    margin-top: 25px;
+    font-size: 18pt;
+    padding-bottom: 10px !important;
+}
+
+.popup-login form {
+    margin-top: -560px !important;
+    /* Ajusta este valor según necesites */
+}
+
+.popup-login form label {
+    display: block !important;
+    font-weight: bold !important;
+    margin-bottom: 30px;
+    /* Define un espacio uniforme */
+}
+
+.popup-login form input {
+    width: 40%;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: -600px;
+}
+
+.popup-login .forgot-password {
+    display: flex;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-left: 239px;
+    font-size: 0.7em;
+    color: #ff6b6b;
+}
+
+.popup-login .login-button {
+    width: 22%;
+    padding: 10px;
+    background-color: #FF5733;
+    color: white;
+    border: none;
+    margin-left: -595px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    /* Ajusta el tamaño de la tipografía aquí */
+    font-weight: bold;
+}
+
+/* ¿No tienes cuenta? Únete */
+.popup-login form+p {
+    text-align: left;
+    font-size: 14px;
+    /* Reduce el tamaño de la tipografía */
+    color: #333;
+    /* Cambia el color si es necesario */
+    margin-left: 125px;
+}
+
+/* Estilo del enlace Únete */
+.popup-login form+p a {
+    color: black;
+    /* Cambia el color del enlace */
+    text-decoration: none;
+    /* Sin subrayado */
+    font-weight: bold;
+    /* Texto en negrita */
+}
+
+.popup-login form+p a:hover {
+    text-decoration: underline;
+    /* Subrayado al pasar el mouse */
+}
+
+/* Redes sociales para loguearte dentro del pop-up */
+.popup-login .social-login {
+    display: flex;
+    flex-direction: column;
+    /* Alinea los elementos en una columna */
+    align-items: flex-start;
+    /* Alinea los botones a la izquierda */
+    gap: 10px;
+    /* Espacio entre los botones */
+    margin-top: 40px;
+    /* Ajusta la distancia desde arriba */
+}
+
+.popup-login .social-login button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    /* Espacio entre la imagen y el texto */
+    width: 40%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    /* Texto en negrita */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.popup-login .apple-login {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Mantén todo alineado a la izquierda */
+    background-color: black;
+    color: white;
+    height: 50px;
+    /* Ajusta el valor según el diseño */
+    padding: 0;
+    /* Opcional: elimina el relleno para evitar conflictos */
+}
+
+.popup-login .apple-login img {
+    width: 100px !important;
+    height: 100px !important;
+    margin-left: -40px;
+    /* Elimina el margen izquierdo que pueda estar separando la imagen del texto */
+    margin-right: -28px;
+    /* Añade un pequeño margen entre la imagen y el texto */
+}
+
+/* Estilo del texto (span) */
+.popup-login .apple-login span {
+    margin-left: 0;
+    /* Elimina cualquier margen que pueda desplazar el texto */
+    text-align: left;
+    /* Asegura que el texto esté alineado a la izquierda */
+    flex-grow: 0;
+    /* No permite que el texto ocupe más espacio */
+}
+
+/* Google Button */
+.popup-login .google-login img {
+    width: 30px;
+    /* Ajusta el tamaño de la imagen de Google */
+    height: 20px;
+}
+
+.popup-login .facebook-login img {
+    width: 25px;
+    /* Ajusta el tamaño de la imagen de Facebook */
+    height: 25px;
+}
+
+/* Estilos para los botones */
+.popup-login .google-login {
+    background-color: #eee;
+    color: #333;
+}
+
+.popup-login .facebook-login {
+    background-color: #4267b2;
+    color: white;
+}
+
+
+
+
+
+
+/*FOOTER*/
+
+/* Estilos generales para el footer */
+
+.footer {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background-color: #FFFAF4 !important;
+    padding: 20px !important;
+    height: 200px !important;
+}
+
+.footer-links {
+    display: flex !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 800px !important;
+    margin-bottom: 20px !important;
+}
+
+.footer-link {
+    text-decoration: none !important;
+    color: #000 !important;
+    font-size: 16px !important;
+    margin: 0 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    font-weight: 700 !important;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.social-link {
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icon {
+    width: 60px !important;
+    height: 60px !important;
+}
+
+.footer-logo img {
+    max-width: 120px !important;
+    margin-top: 10px !important;
+}
+
+.footer-icon {
+    width: 30px !important;
+    margin-right: 10px !important;
+}
+
+
+/*CARRITO*/
+/* Estilos generales del modal */
+#modal-carrito {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cerrar {
+    font-size: 24px;
+    cursor: pointer;
+    text-align: right;
+    padding: 10px;
+}
+
+#contenido-carrito {
+    overflow-y: auto;
+    flex: 1;
+    padding: 20px;
+}
+
+.producto {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.imagen-producto {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.detalles-producto {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nombre-producto {
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cantidad-precio {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.cantidad {
+    padding: 0 10px;
+}
+
+.btn-cantidad {
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background: white;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-cantidad:hover {
+    background: #f490a5;
+}
+
+.icono-eliminar {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-top: 1px solid #ccc;
+}
+
+.boton-finalizar {
+    background: black;
+    color: white;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+    /* Centrado horizontal */
+    padding: 10px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    position: relative;
+}
+
+.boton-finalizar:hover {
+    background: #333;
+}
+
+/* Footer del carrito para posicionar el botón abajo */
+#footer-carrito {
+    padding: 20px;
+    background: white;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* POR AFUERA DEL CARRITO, EL CONTADOR*/
+/* Estilo del contenedor del icono */
+.icon-container {
+    position: relative;
+    /* Necesario para posicionar el contador sobre el icono */
+}
+
+/* Estilo del ícono del carrito */
+.icon {
+    width: 40px;
+    /* Ajusta el tamaño del carrito según lo necesites */
+    height: 40px;
+}
+
+/* Estilo del contador (número) sobre el carrito */
+.contador-carrito {
+    position: absolute;
+    top: -5px;
+    /* Ajusta la posición vertical del contador */
+    right: -5px;
+    /* Ajusta la posición horizontal del contador */
+    background-color: #f490a5;
+    /* Fondo rosa */
+    color: white;
+    /* Color del número en blanco */
+    font-size: 14px;
+    /* Tamaño del texto */
+    font-weight: bold;
+    /* Hacer el texto más grueso */
+    border-radius: 50%;
+    /* Hacer el fondo redondeado (círculo) */
+    width: 20px;
+    /* Ancho del círculo */
+    height: 20px;
+    /* Alto del círculo */
+    display: flex;
+    /* Usamos Flexbox para centrar el número */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+@media (max-width: 1024px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .logo-img {
+        height: clamp(40px, 5vw, 50px);
+        margin: 0 auto;
+    }
+
+    /* Hamburger menu (unchanged) */
+    .hamburger {
+        display: flex;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+    }
+
+    /* Navigation menu */
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #2A5FB1;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 1000;
+        padding: 0;
+        /* Remove padding */
+        margin: 0;
+        /* Remove margin */
+        border: none;
+        /* Remove borders */
+    }
+
+    /* Open menu state */
+    nav.menu-open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        text-align: left !important;
+    }
+
+    .menu {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 10px 20px !important;
+        margin: 0 !important;
+        list-style: none !important;
+        align-items: left !important;
+        justify-content: flex-start !important;
+    }
+
+    .menu li {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: auto !important;
+    }
+
+    .menu li a,
+    .menu li button {
+        font-size: clamp(14px, 2vw, 16px) !important;
+        padding: 10px 15px !important;
+        margin: 0 !important;
+        text-align: left !important;
+        color: #fff !important;
+        text-decoration: none !important;
+        display: block !important;
+        margin-right: clamp(300px, 1.2vw, 112px) !important;
+    }
+
+    /* Remove hover underline effect in mobile */
+    .menu li a::after {
+        display: none;
+    }
+
+    /* Override browser defaults for lists */
+    nav ul,
+    nav li {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Icon container (unchanged) */
+    .icon-container {
+        position: absolute;
+        right: 20px;
+        margin-top: 0;
+        gap: 15px;
+    }
+
+    .icon-container a img.icon {
+        width: clamp(18px, 2vw, 20px);
+    }
+
+    /* Menu section (unchanged) */
+    #menu {
+        height: 70vh;
+    }
+
+    .btn-overlay {
+        font-size: clamp(12px, 1.5vw, 15px);
+        padding: clamp(6px, 1vw, 8px) clamp(12px, 2vw, 16px);
+    }
+
+    #modal-carrito {
+        width: clamp(300px, 80vw, 400px);
+        /* Responsive width */
+        right: -100%;
+        /* Start off-screen */
+    }
+
+    #modal-carrito.active {
+        right: 0;
+        /* Slide in */
+    }
+
+    .icon-container {
+        right: 70px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .footer {
+        padding: 10px;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links {
+        margin-bottom: 20px !important;
+        font-size: clamp(9px, 1.5vw, 12px) !important;
+        text-align: center !important;
+        flex-wrap: wrap !important;
+        max-width: 90% !important;
+    }
+
+    .footer-link {
+        font-size: clamp(9px, 1.5vw, 12px) !important;
+        margin: 5px !important;
+    }
+
+    .footer-link .footer-icon {
+        max-width: clamp(15px, 2vw, 20px) !important;
+    }
+
+    .footer-social {
+        margin-bottom: 10px !important;
+    }
+
+    .social-icon {
+        width: clamp(30px, 5vw, 50px) !important;
+        height: clamp(30px, 5vw, 50px) !important;
+    }
+
+    .footer-logo img {
+        max-width: clamp(40px, 10vw, 80px) !important;
+    }
+
+    #modal-carrito {
+        width: clamp(300px, 80vw, 400px) !important;
+        max-width: 90% !important;
+    }
+
+    
+
+    /*---POP UP----- DEL MENU PERSONALIZAR*/
+    #popup-personalizado {
+        width: 90% !important;
+        height: 500px !important;
+        padding: 10px !important;
+        max-width: 90% !important;
+        max-height: 100vh !important;
+    }
+
+    #popup-personalizado h3 {
+        font-size: clamp(12px, 1.8vw, 15px) !important;
+        margin-left: 10px !important;
+        margin-top: 0px;
+    }
+
+    #popup-personalizado p {
+        font-size: clamp(10px, 1.5vw, 14px) !important;
+        margin-left: 10px !important;
+        margin-top: 20px !important;
+    }
+
+    #popup-personalizado .imagen-cupcake {
+        max-width: clamp(200px, 40vw, 400px) !important;
+        margin: 20px auto !important;
+        display: block !important;
+    }
+
+    #popup-personalizado .indicador {
+        margin-top: clamp(-180px, 10vw, -150px) !important;
+        margin-left: 350px !important;
+        margin-right: auto;
+        height: clamp(200px, 20vw, 300px) !important;
+        gap: clamp(30px, 8vw, 60px) !important;
+    }
+
+    #popup-personalizado .indicador::before {
+        top: clamp(60px, 20vw, 120px) !important;
+        width: clamp(15px, 4vw, 25px) !important;
+    }
+
+    #popup-personalizado .indicador span {
+        width: clamp(40px, 8vw, 60px) !important;
+        height: clamp(40px, 8vw, 60px) !important;
+    }
+
+    #popup-personalizado ul {
+        margin-top: clamp(-500px, 10vw, -250px) !important;
+    }
+
+    #popup-personalizado ul li {
+        font-size: clamp(10px, 1.5vw, 12px) !important;
+    }
+
+    #popup-personalizado .continue-btn {
+        font-size: clamp(15px, 2vw, 16px) !important;
+        padding: clamp(8px, 1.5vw, 10px) clamp(16px, 2vw, 20px) !important;
+        left: 80% !important;
+        transform: translateX(-50%) !important;
+    }
+
+    #popup-personalizado .cerrar-popup {
+        font-size: clamp(30px, 5vw, 35px) !important;
+    }
+
+    /* Ajuste del contenedor principal */
+    .popup-login .popup-content {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    /* Imagen del popup */
+    .popup-login .popup-image {
+        display: none;
+    }
+
+    /* Botón de cerrar */
+    .popup-login .close-button {
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+    }
+
+    /* Formularios */
+    .popup-login form {
+        margin: 15px 0 !important;
+    }
+
+    .popup-login form label {
+        font-size: 10pt;
+    }
+
+    .popup-login form input {
+        width: 90% !important;
+        margin-top: -60px !important;
+        padding: 10px !important;
+        margin-left: -10px !important;
+
+    }
+
+    .popup-login .forgot-password {
+        text-align: center;
+        margin: 10px 0;
+        font-size: 12px;
+        margin-left: 220px;
+    }
+
+    .popup-login .login-button {
+        width: 100%;
+        font-size: 16px;
+        margin: 20px 0;
+    }
+
+    /* Texto "Únete" */
+    .popup-login form+p {
+        text-align: center;
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    .popup-login form+p a {
+        font-size: 14px;
+    }
+
+    /* Redes sociales */
+    .popup-login .social-login {
+        align-items: center;
+        gap: 15px;
+    }
+
+    .popup-login .social-login button {
+        width: 90% !important;
+        font-size: 14px;
+    }
+
+    .popup-login .apple-login img,
+    .popup-login .google-login img,
+    .popup-login .facebook-login img {
+        width: 25px !important;
+        height: auto !important;
+    }
+
+    .popup-login .apple-login span {
+        font-size: 14px;
+    }
+
+    .popup-login .apple-login img {
+        width: 100px !important;
+        height: 100px !important;
+        margin-left: -40px;
+        /* Elimina el margen izquierdo que pueda estar separando la imagen del texto */
+        margin-right: -28px;
+        /* Añade un pequeño margen entre la imagen y el texto */
+    }
+
+    /*-------- Pop-up de Login: B. COMPRAR C3 Y C6 -------*/
+    #popup-login .popup-content {
+        width: clamp(320px, 90vw, 720px);
+        max-width: 90% !important;
+        height: auto !important;
+        padding: clamp(10px, 2vw, 15px);
+        border-radius: 10px;
+    }
+
+    #popup-login h2 {
+        font-size: clamp(18px, 2.5vw, 20px);
+        margin-left: clamp(5px, 1vw, 10px);
+        margin-bottom: 15px;
+    }
+
+    #popup-login .popup-image {
+        display: none;
+    }
+
+    #popup-login form {
+        margin-top: 0;
+    }
+
+    #popup-login form label {
+        font-size: clamp(12px, 1.8vw, 14px);
+        margin-left: clamp(5px, 1vw, 10px);
+    }
+
+    #popup-login form input {
+        width: clamp(85%, 90vw, 90%);
+        padding: clamp(8px, 1.5vw, 10px);
+        margin-left: clamp(5px, 1vw, 10px);
+        font-size: clamp(12px, 1.8vw, 14px);
+    }
+
+    #popup-login .forgot-password {
+        font-size: clamp(9px, 1.5vw, 12px);
+        margin-left: clamp(0px, 5vw, 10px);
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    #popup-login .login-button {
+        width: clamp(88%, 95vw, 95%);
+        font-size: clamp(12px, 1.8vw, 15px);
+        margin: clamp(10px, 2vw, 20px) auto;
+        padding: clamp(8px, 1.5vw, 10px);
+    }
+
+    #popup-login form+p {
+        font-size: clamp(12px, 1.8vw, 14px);
+        margin: clamp(10px, 2vw, 15px) auto;
+        text-align: center;
+    }
+
+    #popup-login form+p a {
+        font-size: clamp(12px, 1.8vw, 14px);
+    }
+
+    #popup-login .social-login {
+        align-items: center;
+        gap: clamp(10px, 2vw, 15px);
+        margin-top: clamp(15px, 3vw, 20px);
+    }
+
+    #popup-login .social-login button {
+        width: clamp(90%, 95vw, 95%);
+        font-size: clamp(12px, 1.8vw, 14px);
+        padding: clamp(10px, 2vw, 15px);
+    }
+
+    #popup-login .social-login img {
+        width: clamp(20px, 5vw, 25px) !important;
+        height: auto !important;
+    }
+
+    #popup-login .apple-login img {
+        width: clamp(80px, 20vw, 100px) !important;
+        height: clamp(80px, 20vw, 100px) !important;
+        margin-left: clamp(-40px, -10vw, -30px) !important;
+        margin-right: clamp(-30px, -8vw, -25px) !important;
+    }
+
+    /*----------------------PERSONALIZAR: C3*------------------*/
+    @media (max-width: 414px) {
+        .popup-login .popup-content {
+            width: 90% !important;
+            max-width: 320px !important;
+            height: 600px !important;
+            padding: 15px !important;
+            border-radius: 10px !important;
+        }
+
+        .popup-login .popup-image {
+            display: none !important;
+        }
+
+        .popup-login .close-button {
+            top: 10px !important;
+            right: 5px !important;
+            font-size: 20px !important;
+            color: #000;
+        }
+
+        .popup-login form {
+            margin: 15px 0 !important;
+        }
+
+        .popup-login form label {
+            font-size: 12px !important;
+        }
+
+        .popup-login form input {
+            width: 90%;
+            padding: 10px;
+        }
+
+        .popup-login .forgot-password {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 9px !important;
+            margin-left: 200px;
+            white-space: nowrap;
+        }
+
+        .popup-login .login-button {
+            width: 98%;
+            font-size: 12px;
+            margin: 20px 0;
+            margin-top: -10px;
+        }
+
+        .popup-login form+p {
+            text-align: center;
+            font-size: 12px;
+            margin: 10px 0;
+            margin-top: -20px;
+        }
+
+        .popup-login form+p a {
+            font-size: 12px !important;
+        }
+
+        .popup-login .social-login {
+            align-items: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .popup-login .social-login button {
+            width: 90%;
+            font-size: 14px;
+        }
+
+        .popup-login .apple-login img,
+        .popup-login .google-login img,
+        .popup-login .facebook-login img {
+            width: 25px !important;
+            height: auto !important;
+        }
+
+        .popup-login .apple-login span {
+            font-size: 14px;
+        }
+
+        .popup-login .apple-login img {
+            width: 100px !important;
+            height: 100px !important;
+            margin-left: -40px;
+            margin-right: -28px;
+        }
+    }
+
+    /* Formularios y Cuentas */
+    .form-container {
+        padding: 15px !important;
+        max-width: 350px !important;
+        margin: 15px auto !important;
+        font-size: clamp(9px, 1.2vw, 12px);
+    }
+
+    .small-image {
+        max-width: 40px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .form-container h2 {
+        font-size: clamp(9px, 1.2vw, 12px);
+        margin-bottom: 5px !important;
+    }
+
+    form input[type="text"],
+    form input[type="tel"],
+    form input[type="email"],
+    form input[type="password"] {
+        font-size: 10pt !important;
+        padding: 6px !important;
+        margin-bottom: 10px !important;
+    }
+
+    form input[type="submit"] {
+        font-size: clamp(9px, 1.2vw, 12px);
+        padding: 8px !important;
+    }
+
+    form p,
+    .login-link {
+        font-size: clamp(9px, 1.2vw, 12px);
+    }
+
+    .login-link {
+        text-decoration: underline !important;
+    }
+
+    
+}
