@@ -2260,3 +2260,44 @@ body .footer {
 .footer-icon {
     width: 30px;
 }
+
+/* ✅ Desktop: corregir alineación si hay solo un cupcake personalizado */
+#cupcake-preview-list .new-cupcake-item:only-child {
+    margin-left: 380px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+/* Imagen y texto bien alineados */
+#cupcake-preview-list .new-cupcake-item:only-child img {
+    margin-left: 0 !important;
+}
+
+#cupcake-preview-list .new-cupcake-item:only-child .cupcake-personalizado {
+    margin-left: -12px !important;
+}
+
+/* ✅ Mobile: misma corrección para pantallas pequeñas */
+@media (max-width: 768px) {
+    #cupcake-preview-list .new-cupcake-item:only-child {
+        margin-left: -120px !important;
+        margin-right: auto !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    #cupcake-preview-list .new-cupcake-item:only-child img {
+        margin-left: 0 !important;
+        width: clamp(50px, 12vw, 80px) !important;
+    }
+
+    #cupcake-preview-list .new-cupcake-item:only-child .cupcake-personalizado {
+        margin-left: 0px !important;
+        font-size: clamp(12px, 1.8vw, 14px) !important;
+        white-space: nowrap !important;
+
+
+    }
+}
