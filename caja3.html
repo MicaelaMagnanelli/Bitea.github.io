@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bitea</title>
+  <link rel="icon" href="Imagenes/Logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="Css/styles-caja.css">
+
+  <!-- TIPOGRAFÍA -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+
+  <!-- Menú de navegación -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Imagenes/Logo de Bitea (Blanco).png" alt="Logo" class="logo-img">
+      </a>
+    </div>
+
+    <!-- Ícono del menú hamburguesa (visible solo en móvil/tablet) -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Menú principal -->
+    <nav id="nav-menu">
+      <ul class="menu">
+        <li><a href="index.html" id="menu-link" data-i18n="menu-link">Menú</a></li>
+        <li><a href="Comprar.html" id="comprar-link" data-i18n="comprar-link">Comprar</a></li>
+        <li><a href="#" id="abrir-popup-personalizado" data-i18n="abrir-popup-personalizado">Personalizar</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Íconos de carrito -->
+    <div class="icon-container">
+      <!-- El enlace del carrito -->
+      <a href="javascript:void(0)" onclick="mostrarCarrito()">
+        <img src="Imagenes/Menu/Carrito.png" alt="Carrito" class="icon">
+        <!-- El contador debe estar aquí, en el ícono del carrito -->
+        <span id="contador-carrito" class="contador-carrito">0</span>
+      </a>
+    </div>
+
+    <!-- Modal del carrito -->
+    <div id="modal-carrito" class="modal">
+      <div class="modal-contenido">
+        <span class="cerrar" onclick="cerrarCarrito()">×</span>
+        <div id="contenido-carrito"></div>
+        <div id="total-carrito"></div>
+        <div id="footer-carrito">
+          <button class="boton-finalizar" id="checkout-btn">Finalizar compra</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!---->
+
+  <section class="container">
+    <!-- Caja (lado izquierdo) -->
+    <div class="box-area">
+      <img src="Imagenes/Cajas/Caja sin fondo y sin sombra .png" alt="Bitea Box" class="box-image">
+    </div>
+
+    <!-- Seleccioná 3 sabores y BT: COMPRAR-->
+    <div class="selection-area">
+      <h2 class="title" id="select-flavors-title-3" data-i18n="select-flavors-title-3">Seleccioná 3 sabores</h2>
+      <button class="buy-button" id="buy-button" data-i18n="buy-button" disabled>Comprar</button>
+    </div>
+
+    <!-- Lista de productos (8 por página) -->
+    <div class="product-list page-1 active" data-page="1">
+      <!-- 1 Apple Bite -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/1. C. Apple Bite.png" alt="Apple Bite">
+        <span class="apple-bite" data-i18n="apple-bite-title">Apple Bite</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 2 Lemon Bite-->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/2. C Lemon Bite (SIN FONDO).png" alt="Lemon Bite">
+        <span class="lemon-bite" data-i18n="lemon-bite-title">Lemon Bite</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 3 Choco Bite -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/3. C. Choco Bite (SIN FONDO).png" alt="Choco Bite">
+        <span class="choco-bite" data-i18n="choco-bite-title">Choco Bite</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 4 Cookie Blast -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/4. C. Cookie Blast (SIN FONDO).png" alt="Cookie Blast">
+        <span class="cookie-blast" data-i18n="cookie-blast-title">Cookie Blast</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 5 Cono Cup -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/5. C. Cono Cup.png" alt="Cono Cup">
+        <span class="cono-cup" data-i18n="cono-cup-title">Cono Cup</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 6 MaiceBoom -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/6. C. MaiceBoom.png" alt="MaiceBoom">
+        <span class="maiceboom" data-i18n="maice-boom-title">MaiceBoom</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 7 Banana Bliss -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/11. C. Banana Bliss (SIN FONDO).png" alt="Banana Bliss">
+        <span class="banana-bliss" data-i18n="banana-bliss-title">Banana Bliss</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 8 Pistacho Lover -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/8. C. Pistacho Lover (SIN FONDO).png" alt="Pistacho Lover">
+        <span class="pistacho-lover" data-i18n="pistachio-lover-title">Pistacho Lover</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Página 2 -->
+    <div class="product-list page-2 hidden" data-page="2">
+      <!-- 9 Oreo Bite -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/11. C. OREO Bite (SIN FONDO).png" alt="Oreo Bite">
+        <span class="oreo-bite" data-i18n="oreo-bite-title">Oreo Bite</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 10 Pretzel Crunch -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/12. C. PRETZEL Crunch (SIN FONDO).png" alt="Pretzel Crunch">
+        <span class="pretzel-crunch" data-i18n="pretzel-crunch-title">Pretzel Crunch</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 11 Ice Bitea Dream -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/7. Ice Bitea Dream (SIN FONDO).png" alt="Ice Bitea Dream">
+        <span class="ice-bitea-dream" data-i18n="ice-bitea-dream-title">Ice Bitea Dream</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 12 Flynn Bite -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/10. C Flynn Bite .png" alt="Flynn Bite">
+        <span class="flynn-bite" data-i18n="flynn-bite-title">Flynn Bite</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+
+      <!-- 13 Cereal Bite -->
+      <div class="product-item">
+        <img src="Imagenes/Sabores/13. C. Cereal Bite (SIN FONDO).png" alt="Cereal Bite">
+        <span class="cereal-bite" data-i18n="cereal-bite-title">Cereal Bite</span>
+        <div class="counter">
+          <button class="btn-decrease">-</button>
+          <input type="number" class="quantity" value="0" min="0" max="3">
+          <button class="btn-increase">+</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Paginación con dos imágenes -->
+    <div class="pagination">
+      <img src="Imagenes/Flechas/Flecha (Izquierda).png" class="page-arrow-left" alt="Previous" />
+      <span class="page-number">1</span>
+      <img src="Imagenes/Flechas/Flecha (Derecha).png" class="page-arrow-right" alt="Next" />
+    </div>
+
+    <!-- Pop-up (log in) -->
+    <div id="popup-login" class="popup-login hidden">
+      <div class="popup-content">
+        <button class="close-button">&times;</button>
+        <h2 id="popup-login-title" data-i18n="popup-login-title">Entra</h2>
+        <div class="popup-image">
+          <img src="Imagenes/Patron.png" alt="Imagen descriptiva">
+        </div>
+        <form>
+          <label for="email" id="label-email" data-i18n="label-email">Email</label>
+          <input type="email" id="email" name="email" data-i18n-placeholder="placeholder-email"
+            placeholder="Ingresa tu correo" required>
+
+          <label for="password" id="label-password" data-i18n="label-password">Contraseña</label>
+          <input type="password" id="password" name="password" data-i18n-placeholder="placeholder-password"
+            placeholder="Ingresa tu contraseña" required>
+
+          <a href="#" class="forgot-password" id="forgot-password" data-i18n="forgot-password">¿Olvidaste tu
+            contraseña?</a>
+          <button type="submit" class="login-button" id="login-button" data-i18n="login-button">Entrar</button>
+        </form>
+        <p id="no-account" data-i18n="no-account">¿No tienes cuenta? <a href="Ccuenta.html" id="join-link"
+            data-i18n="join-link">Únete</a></p>
+        <div class="social-login">
+          <button class="google-login">
+            <img src="Imagenes/PopUp/icono-gmail.png" alt="Google" class="social-icon">
+            <span id="google-login" data-i18n="google-login">Entra con Gmail</span>
+          </button>
+          <button class="apple-login">
+            <img src="Imagenes/PopUp/icono-apple.png" alt="Apple" class="social-icon">
+            <span id="apple-login" data-i18n="apple-login">Entra con Apple</span>
+          </button>
+          <button class="facebook-login">
+            <img src="Imagenes/PopUp/icono-facebook.png" alt="Facebook" class="social-icon">
+            <span id="facebook-login" data-i18n="facebook-login">Entra con Facebook</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pop-up (popup-personalizado) -->
+  <div class="popup" id="popup-personalizado">
+    <span id="cerrar-popup-personalizado" class="cerrar-popup">&times;</span>
+    <h3 id="titulo-popup-personalizado" data-i18n="popup-title">Armá tu cupcake</h3>
+    <p id="subtitulo-popup-personalizado" data-i18n="subtitulo-0">Elegí tu Frosting</p>
+    <img id="imagen-cupcake-personalizado" class="imagen-cupcake"
+      src="Imagenes/Personalizado/Frosting (CUPCAKE - PERSONALIZADO).png" alt="Cupcake con Frosting">
+    <div class="indicador">
+      <span id="indicador-frosting-personalizado" class="active"></span>
+      <span id="indicador-relleno-personalizado"></span>
+      <span id="indicador-masa-personalizado"></span>
+    </div>
+    <ul id="opciones-frosting-personalizado"></ul>
+    <ul id="opciones-relleno-personalizado" style="display: none;"></ul>
+    <ul id="opciones-masa-personalizado" style="display: none;"></ul>
+    <button class="continue-btn" id="continuar-personalizado" data-i18n="continuar-personalizado"
+      disabled>Continuar</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-links">
+      <a class="footer-link"
+        href="https://www.google.com/maps/place/El+Salvador+4689,+C1414+Cdad.+Aut%C3%B3noma+de+Buenos+Aires/@-34.5893949,-58.4294298,17z/data=!3m1!4b1!4m6!3m5!1s0x95bcb5879646ab49:0xab54ef9b6efc2346!8m2!3d-34.5893949"
+        target="_blank">
+        <img src="Imagenes/Footer/Locación.png" alt="Ubicación" class="footer-icon">
+        <span id="footer-location" data-i18n="footer-location">Ubicación</span>
+      </a>
+      <a class="footer-link" href="Historia.html">
+        <img src="Imagenes/Footer/Historia.png" alt="Historia" class="footer-icon">
+        <span id="footer-history" data-i18n="footer-history">Historia</span>
+      </a>
+      <a class="footer-link" href="mailto:mica_magna@hotmail.com">
+        <img src="Imagenes/Footer/Contacto.png" alt="Contacto" class="footer-icon">
+        <span id="footer-contact" data-i18n="footer-contact">Contacto</span>
+      </a>
+    </div>
+
+
+    <!-- Redes sociales -->
+    <div class="footer-social">
+      <a class="social-link" href="https://www.instagram.com/mica_magna/" target="_blank">
+        <img src="Imagenes/Footer/Redes/Ig.png" alt="Instagram" class="social-icon">
+      </a>
+      <a class="social-link" href="https://www.linkedin.com/in/micaela-magnanelli-57b823176/" target="_blank">
+        <img src="Imagenes/Footer/Redes/Tik Tok.png" alt="LinkedIn" class="social-icon">
+      </a>
+      <a class="social-link" href="https://wa.me/+541133852069" target="_blank">
+        <img src="Imagenes/Footer/Redes/WhatsApp.png" alt="WhatsApp" class="social-icon">
+      </a>
+    </div>
+
+    <div class="footer-logo">
+      <a href="index.html">
+        <img src="Imagenes/Footer/Logo Bitea (Negro) .png" alt="Logo">
+      </a>
+    </div>
+  </footer>
+
+  <!-- Insertar el código JavaScript aquí -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        if (!window.translations) {
+          console.error('translations.js no está cargado');
+          return;
+        } else {
+          console.log('translations.js cargado correctamente:', Object.keys(translations));
+        }
+
+        const popup = document.getElementById('popup-personalizado');
+        const abrirPopup = document.getElementById('abrir-popup-personalizado');
+        const cerrarPopup = document.getElementById('cerrar-popup-personalizado');
+        const continuar = document.getElementById('continuar-personalizado');
+        const tituloPopup = document.getElementById('titulo-popup-personalizado');
+        const subtituloPopup = document.getElementById('subtitulo-popup-personalizado');
+        const imagenCupcake = document.getElementById('imagen-cupcake-personalizado');
+        const indicadores = document.querySelectorAll('.indicador span');
+
+        console.log('Elementos del popup:', {
+          popup: !!popup,
+          abrirPopup: !!abrirPopup,
+          cerrarPopup: !!cerrarPopup,
+          continuar: !!continuar,
+          tituloPopup: !!tituloPopup,
+          subtituloPopup: !!subtituloPopup,
+          imagenCupcake: !!imagenCupcake,
+          indicadores: indicadores.length
+        });
+
+        if (!popup || !abrirPopup || !cerrarPopup || !continuar) {
+          console.warn('Faltan elementos esenciales del popup. Omitiendo lógica.');
+          return;
+        }
+
+        let etapaActual = 0;
+
+        const getCurrentLanguage = () => {
+          const lang = localStorage.getItem('language') || 'es';
+          console.log('Idioma actual:', lang);
+          return lang;
+        };
+
+        const getTranslation = (key, lang) => {
+          if (!window.translations || !translations[lang]) {
+            console.warn(`No se encontraron traducciones para idioma "${lang}" o clave "${key}"`);
+            return key;
+          }
+          const translation = translations[lang][key] || key;
+          console.log(`Traduciendo clave "${key}" en idioma "${lang}":`, translation);
+          return translation;
+        };
+
+        const etapas = [
+          {
+            titulo: 'popup-title',
+            subtitulo: 'subtitulo-0',
+            imagen: 'Imagenes/Personalizado/Frosting (CUPCAKE - PERSONALIZADO).png',
+            opciones: [
+              'frosting-manzanas-asadas',
+              'frosting-limon',
+              'ganash-chocolate-amargo',
+              'frosting-queso-caramelo',
+              'cobertura-chocolate-ddl',
+              'crema-helada',
+              'frosting-pistacho',
+              'frosting-banana-caramelo',
+              'frosting-caramelo-sal-pretzel',
+              'frosting-flynn',
+              'frosting-cookies-cream',
+              'frosting-cereales'
+            ],
+            id: 'opciones-frosting-personalizado'
+          },
+          {
+            titulo: 'popup-title',
+            subtitulo: 'subtitulo-1',
+            imagen: 'Imagenes/Personalizado/Relleno (CUPCAKE - PERSONALIZADO).png',
+            opciones: [
+              'manzanas-caramelo',
+              'crema-limon-merengue',
+              'crema-cacao',
+              'ddl-bitea',
+              'crema-helada-relleno',
+              'pistacho-nuez',
+              'banana-caramelo',
+              'flynn-bite-relleno',
+              'cream-cookies',
+              'caramelo-pretzel',
+              'cereales-relleno'
+            ],
+            id: 'opciones-relleno-personalizado'
+          },
+          {
+            titulo: 'popup-title',
+            subtitulo: 'subtitulo-2',
+            imagen: 'Imagenes/Personalizado/Masa (CUPCAKES - PERSONALIZADO).png',
+            opciones: [
+              'chocolate',
+              'vainilla',
+              'marmolada',
+              'red-velvet'
+            ],
+            id: 'opciones-masa-personalizado'
+          }
+        ];
+
+        const habilitarContinuar = () => {
+          const opcionSeleccionada = document.querySelector(`#${etapas[etapaActual].id} input:checked`);
+          continuar.disabled = !opcionSeleccionada;
+          console.log('Botón continuar habilitado:', !continuar.disabled);
+        };
+
+        const manejarSeleccion = (event, categoria) => {
+          const opcionesDelGrupo = document.querySelectorAll(`#${categoria} input[type="checkbox"]`);
+          opcionesDelGrupo.forEach(opcion => {
+            if (opcion !== event.target) {
+              opcion.checked = false;
+            }
+          });
+          habilitarContinuar();
+        };
+
+        const continuarHandler = () => {
+          if (etapaActual < etapas.length - 1) {
+            etapaActual++;
+            actualizarContenido();
+          } else {
+            window.location.href = 'Cajaspersonalizar.html';
+            alert(getTranslation('alert-biteas-listos', getCurrentLanguage()));
+            cerrarPopupHandler();
+          }
+        };
+
+        const mostrarPopup = () => {
+          popup.classList.add('active');
+          actualizarContenido();
+          console.log('Popup abierto');
+        };
+
+        const cerrarPopupHandler = () => {
+          popup.classList.remove('active');
+          etapaActual = 0;
+          actualizarContenido();
+          console.log('Popup cerrado');
+        };
+
+        window.actualizarContenido = () => {
+          const etapa = etapas[etapaActual];
+          const lang = getCurrentLanguage();
+
+          console.log('Actualizando contenido para etapa:', etapaActual, 'Idioma:', lang, 'Opciones:', etapa.opciones);
+
+          if (tituloPopup) {
+            tituloPopup.textContent = getTranslation(etapa.titulo, lang);
+          }
+          if (subtituloPopup) {
+            subtituloPopup.textContent = getTranslation(etapa.subtitulo, lang);
+          }
+          if (imagenCupcake) {
+            imagenCupcake.src = etapa.imagen;
+          }
+
+          document.querySelectorAll("ul[id^='opciones-']").forEach((ul) => {
+            ul.style.display = 'none';
+            ul.innerHTML = '';
+          });
+
+          const listaOpciones = document.querySelector(`#${etapa.id}`);
+          if (listaOpciones) {
+            listaOpciones.style.display = 'block';
+            listaOpciones.innerHTML = etapa.opciones
+              .map(opcion => {
+                const translated = getTranslation(opcion, lang);
+                console.log(`Renderizando opción: ${opcion} -> ${translated}`);
+                return `<li><input type="checkbox" value="${opcion}"> ${translated}</li>`;
+              })
+              .join('');
+            console.log(`Opciones renderizadas para ${etapa.id}:`, listaOpciones.innerHTML);
+          } else {
+            console.error(`Lista de opciones no encontrada: #${etapa.id}`);
+          }
+
+          habilitarContinuar();
+
+          if (listaOpciones) {
+            listaOpciones.querySelectorAll('input').forEach(input => {
+              input.addEventListener('change', (event) => {
+                manejarSeleccion(event, etapa.id);
+              });
+            });
+          }
+
+          indicadores.forEach((indicador, index) => {
+            indicador.classList.toggle('active', index === etapaActual);
+          });
+
+          if (continuar) {
+            continuar.textContent = getTranslation('continuar-personalizado', lang);
+          }
+        };
+
+        abrirPopup.addEventListener('click', mostrarPopup);
+        cerrarPopup.addEventListener('click', cerrarPopupHandler);
+        continuar.addEventListener('click', continuarHandler);
+
+        popup.addEventListener('click', (e) => {
+          if (e.target === popup) {
+            cerrarPopupHandler();
+          }
+        });
+
+        // Inicializar contenido
+        actualizarContenido();
+
+        // Código para el menú hamburguesa
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+
+        console.log('Elementos del menú hamburguesa:', {
+          hamburger: !!hamburger,
+          mobileMenu: !!mobileMenu,
+          closeMenu: !!closeMenu
+        });
+
+        if (hamburger && mobileMenu && closeMenu) {
+          const toggleMenu = () => {
+            mobileMenu.classList.toggle('active');
+            console.log('Menú móvil toggled:', mobileMenu.classList.contains('active'));
+          };
+
+          hamburger.addEventListener('click', toggleMenu);
+          closeMenu.addEventListener('click', toggleMenu);
+
+          const lang = localStorage.getItem('language') || 'es';
+          const menuLinks = [
+            { id: 'menu-link', idMobile: 'menu-link-mobile', key: 'menu-link' },
+            { id: 'comprar-link', idMobile: 'comprar-link-mobile', key: 'comprar-link' },
+            { id: 'personalizar-link', idMobile: 'personalizar-link-mobile', key: 'personalizar-link' }
+          ];
+
+          menuLinks.forEach(link => {
+            const desktopLink = document.getElementById(link.id);
+            const mobileLink = document.getElementById(link.idMobile);
+            if (desktopLink && window.translations) {
+              desktopLink.textContent = translations[lang][link.key] || link.key;
+            }
+            if (mobileLink && window.translations) {
+              mobileLink.textContent = translations[lang][link.key] || link.key;
+            }
+          });
+        } else {
+          console.warn('Faltan elementos del menú hamburguesa');
+        }
+
+        const hamburgerNav = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburgerNav.addEventListener('click', () => {
+          hamburgerNav.classList.toggle('active');
+          navMenu.classList.toggle('menu-open');
+        });
+
+        const menuLinks = document.querySelectorAll('.menu li a, .menu li button');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            hamburgerNav.classList.remove('active');
+            navMenu.classList.remove('menu-open');
+          });
+        });
+
+        document.addEventListener('click', (event) => {
+          if (!navMenu.contains(event.target) && !hamburgerNav.contains(event.target)) {
+            hamburgerNav.classList.remove('active');
+            navMenu.classList.remove('menu-open');
+          }
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 1024) {
+            hamburgerNav.classList.remove('active');
+            navMenu.classList.remove('menu-open');
+          }
+        });
+      } catch (e) {
+        console.error('Error en el popup o menú hamburguesa de caja3.html:', e.message, e.stack);
+      }
+
+
+    });
+
+
+  </script>
+
+
+  <script src="js/script.js"></script>
+  <script src="js/carrito.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/common.js"></script>
+
+
+
+</body>
